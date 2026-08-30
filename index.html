@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b4f5c" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08161c" media="(prefers-color-scheme: dark)">
+<title>Casa Escondida &mdash; your week, day by day</title>
+<style>
+:root{
+  --bg:#f4f7f8; --card:#ffffff; --ink:#10212a; --body:#35494f; --muted:#6b7f88;
+  --line:#dde6e9; --line2:#eef3f5; --accent:#0d7490; --accent-ink:#ffffff;
+  --accent-soft:#e4f1f5; --sand:#a86f38; --sand-soft:#fbf1e6;
+  --ok:#0f6b45; --ok-soft:#e4f4ec; --warn:#8a5a12; --warn-soft:#fbf1e0;
+  --stop:#8f2f2f; --stop-soft:#fbeaea; --shadow:0 1px 2px rgba(16,33,42,.06);
+  --now:#0d7490;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1719; --card:#14232a; --ink:#eaf3f6; --body:#c1d2d9; --muted:#8ba3ac;
+    --line:#22383f; --line2:#1a2c33; --accent:#3fa8c4; --accent-ink:#06171d;
+    --accent-soft:#173039; --sand:#d3a06a; --sand-soft:#2b2116;
+    --ok:#5fc99b; --ok-soft:#122c22; --warn:#e0b264; --warn-soft:#2b2314;
+    --stop:#e58585; --stop-soft:#2e1717; --shadow:none;
+    --now:#3fa8c4;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1719; --card:#14232a; --ink:#eaf3f6; --body:#c1d2d9; --muted:#8ba3ac;
+  --line:#22383f; --line2:#1a2c33; --accent:#3fa8c4; --accent-ink:#06171d;
+  --accent-soft:#173039; --sand:#d3a06a; --sand-soft:#2b2116;
+  --ok:#5fc99b; --ok-soft:#122c22; --warn:#e0b264; --warn-soft:#2b2314;
+  --stop:#e58585; --stop-soft:#2e1717; --shadow:none;
+  --now:#3fa8c4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{background:var(--bg);color:var(--body);font-size:16px;line-height:1.55;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding-bottom:calc(56px + env(safe-area-inset-bottom));}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px;}
+h1,h2,h3{color:var(--ink);letter-spacing:-.01em;line-height:1.25;}
+
+header{background:linear-gradient(160deg,#0b4f5c 0%,#0d6577 60%,#0d7490 100%);color:#fff;
+  padding:calc(20px + env(safe-area-inset-top)) 0 20px;}
+header .wrap{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;}
+header h1{color:#fff;font-size:21px;margin-bottom:3px;}
+header .sub{font-size:13.5px;opacity:.9;}
+.tog{flex:0 0 auto;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+  color:#fff;border-radius:999px;width:38px;height:38px;font-size:16px;cursor:pointer;
+  line-height:1;display:grid;place-items:center;}
+.tog:active{transform:scale(.94);}
+
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
+  padding:9px 0 10px;}
+.seg{display:flex;gap:6px;background:var(--line2);border-radius:10px;padding:4px;}
+.seg button{flex:1;border:0;background:none;color:var(--muted);font:inherit;font-size:14px;
+  font-weight:600;padding:7px 4px;border-radius:7px;cursor:pointer;}
+.seg button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:var(--shadow);}
+.chips{display:flex;gap:7px;overflow-x:auto;margin-top:9px;padding-bottom:2px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.chips::-webkit-scrollbar{display:none;}
+.chips button{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--body);
+  font:inherit;font-size:13.5px;padding:6px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;}
+.chips button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+  color:var(--accent-ink);font-weight:600;}
+
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted);
+  padding:12px 0 2px;}
+.prog{height:5px;border-radius:999px;background:var(--line);overflow:hidden;margin:9px 0 2px;}
+.prog i{display:block;height:100%;background:var(--ok);}
+
+h2.day{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  margin:22px 0 9px;font-weight:700;}
+.s{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:11px;padding:13px 15px;margin-bottom:9px;box-shadow:var(--shadow);}
+.s.p2{border-left-color:var(--sand);}
+.s.p3{border-left-color:#2f8f7d;}
+.s.p4{border-left-color:#9a6a9c;}
+.s.p5{border-left-color:#5a7fb0;}
+.s.p6{border-left-color:#3aa0c0;}
+.s.p7{border-left-color:#7a9a3f;}
+.s .t{font-size:12.5px;font-weight:700;color:var(--accent);letter-spacing:.02em;}
+.s .w{font-size:16px;color:var(--ink);font-weight:600;margin:2px 0 5px;}
+.s .l{font-size:13.5px;color:var(--muted);}
+.s .l b{color:var(--body);font-weight:600;}
+.s .note{font-size:13.5px;color:var(--warn);background:var(--warn-soft);border-radius:7px;
+  padding:6px 10px;margin-top:8px;}
+.s.done{opacity:.62;}
+.s.done .w{text-decoration:line-through;text-decoration-thickness:1px;}
+.s.cx .w{text-decoration:line-through;text-decoration-thickness:1px;}
+.s.now{border-left-color:var(--now);box-shadow:0 0 0 2px var(--accent-soft),var(--shadow);}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;border-radius:5px;padding:2px 7px;margin-left:7px;vertical-align:2px;}
+.s-done{background:var(--ok-soft);color:var(--ok);}
+.s-cx{background:var(--stop-soft);color:var(--stop);}
+.s-mv{background:var(--warn-soft);color:var(--warn);}
+.s-now{background:var(--accent-soft);color:var(--accent);}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px;
+  margin-bottom:11px;box-shadow:var(--shadow);}
+.card h3{font-size:17px;}
+.card .rl{display:block;font-size:13px;color:var(--muted);font-weight:400;margin-top:1px;}
+.card .tot{font-size:12.5px;color:var(--accent);font-weight:600;margin-top:5px;}
+.pday{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  font-weight:700;margin:13px 0 5px;padding-top:11px;border-top:1px solid var(--line2);}
+.pr{display:flex;gap:11px;padding:5px 0;font-size:14.5px;}
+.pr .pt{flex:0 0 92px;color:var(--muted);font-variant-numeric:tabular-nums;font-size:13.5px;}
+.pr .px{flex:1;color:var(--ink);}
+.pr .pw{display:block;font-size:12.5px;color:var(--muted);font-weight:400;}
+.pr.done .px{text-decoration:line-through;opacity:.6;}
+
+.note-box{background:var(--accent-soft);border-radius:11px;padding:14px 16px;margin:16px 0;
+  font-size:14.5px;color:var(--ink);}
+.note-box b{color:var(--ink);}
+.empty{text-align:center;color:var(--muted);padding:38px 12px;font-size:14.5px;}
+footer{color:var(--muted);font-size:12.5px;padding:26px 0 30px;border-top:1px solid var(--line);
+  margin-top:28px;}
+footer code{font-size:12px;background:var(--line2);padding:1px 5px;border-radius:4px;}
+@media(min-width:680px){
+  body{font-size:16.5px;} header h1{font-size:26px;} .wrap{padding:0 24px;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:11px;align-items:start;}
+  .cols .card{margin-bottom:0;}
+}
+@media print{
+  .bar,.tog,footer{display:none;} body{background:#fff;padding:0;}
+  .s,.card{break-inside:avoid;box-shadow:none;}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div>
+    <h1>Casa Escondida &mdash; your week with us</h1>
+    <div class="sub">Monday 31 August – Friday 4 September &middot; who we need, when, and where</div>
+  </div>
+  <button class="tog" id="tog" type="button" title="Light or dark" aria-label="Switch light or dark">&#9681;</button>
+</div></header>
+
+<div class="wrap">
+  <div class="bar">
+    <div class="seg" role="tablist">
+      <button role="tab" id="v-day" aria-selected="true">By day</button>
+      <button role="tab" id="v-person" aria-selected="false">By person</button>
+      <button role="tab" id="v-needs" aria-selected="false">What we need</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div id="meta" class="meta"></div>
+  <div class="prog" id="prog"><i style="width:0"></i></div>
+  <main id="out"></main>
+  <footer>
+    <p>This page is kept up to date during the week &mdash; sessions are ticked off as they
+    finish, and anything that moves is changed here first.</p>
+    <p style="margin-top:8px">Schedule as at <b>31 August 2026, 06:59</b> &middot; reference <code>6aaeb763</code>.
+    If you are holding a printed copy with a different reference, this page is the current one.</p>
+  </footer>
+</div>
+
+<script>
+const WEEK = {"client":"Casa Escondida","days":[{"key":"mon","label":"Monday 31 August","date":"2026-08-31"},{"key":"tue","label":"Tuesday 1 September","date":"2026-09-01"},{"key":"wed","label":"Wednesday 2 September","date":"2026-09-02"},{"key":"thu","label":"Thursday 3 September","date":"2026-09-03"},{"key":"fri","label":"Friday 4 September","date":"2026-09-04"}],"sessions":[{"id":"mon-1330-welcome-and-what-this-week-i","day":"mon","start":"13:30","end":"15:00","from":"1.30pm","to":"3pm","mins":90,"what":"Welcome, and what this week is for","where":"The meeting room","casa":["Dong","Andrew","Eloisa","Rhiva","Baby Lyca","Cecille"],"ours":["Sky","AJ","Philip","Jett","Rico"]},{"id":"mon-1500-walk-the-property-together-r","day":"mon","start":"15:00","end":"16:30","from":"3pm","to":"4.30pm","mins":90,"what":"Walk the property together — rooms, rates, the menu and the dive list","where":"Around the resort","casa":["Dong","Andrew","Rhiva"],"ours":["Philip","Jett"]},{"id":"mon-1500-a-tour-of-the-accounting-scr","day":"mon","start":"15:00","end":"16:30","from":"3pm","to":"4.30pm","mins":90,"what":"A tour of the accounting screens","where":"The meeting room","casa":["Eloisa","Baby Lyca","Cecille","Leni"],"ours":["AJ"]},{"id":"mon-1630-check-your-accounts-and-ledg","day":"mon","start":"16:30","end":"18:15","from":"4.30pm","to":"6.15pm","mins":105,"what":"Check your accounts and ledgers","where":"The meeting room","casa":["Eloisa","Baby Lyca","Cecille","Leni"],"ours":["AJ"]},{"id":"mon-1745-we-watch-an-evening-check-ou","day":"mon","start":"17:45","end":"18:30","from":"5.45pm","to":"6.30pm","mins":45,"what":"We watch an evening check-out, exactly as you do it now","where":"The front desk","casa":["Dong","Rhiva"],"ours":["Jett"]},{"id":"tue-0800-a-tour-of-the-front-desk-scr","day":"tue","start":"08:00","end":"09:00","from":"8am","to":"9am","mins":60,"what":"A tour of the front-desk screens","where":"The meeting room","casa":["Rhiva"],"ours":["Philip"]},{"id":"tue-0800-a-guided-click-through-of-th","day":"tue","start":"08:00","end":"09:00","from":"8am","to":"9am","mins":60,"what":"A guided click-through of the accounting screens","where":"The meeting room","casa":["Baby Lyca","Cecille"],"ours":["AJ"]},{"id":"tue-0800-we-watch-how-enquiries-reach","day":"tue","start":"08:00","end":"09:30","from":"8am","to":"9.30am","mins":90,"what":"We watch how enquiries reach you today, and time them","where":"The office","casa":["Eloisa"],"ours":["Jett"]},{"id":"tue-0900-a-walk-through-your-chart-of","day":"tue","start":"09:00","end":"10:00","from":"9am","to":"10am","mins":60,"what":"A walk through your chart of accounts","where":"The meeting room","casa":["Baby Lyca","Cecille","Leni"],"ours":["AJ"]},{"id":"tue-0900-take-a-booking-hold-a-room-c","day":"tue","start":"09:00","end":"12:00","from":"9am","to":"12pm","mins":180,"what":"Take a booking, hold a room, check a guest in","where":"The meeting room","casa":["Rhiva"],"ours":["Philip"]},{"id":"tue-1000-setting-up-foreign-currency","day":"tue","start":"10:00","end":"11:00","from":"10am","to":"11am","mins":60,"what":"Setting up foreign currency","where":"The meeting room","casa":["Baby Lyca","Cecille"],"ours":["AJ"]},{"id":"tue-1100-vat-discounts-and-net-rates","day":"tue","start":"11:00","end":"12:00","from":"11am","to":"12pm","mins":60,"what":"VAT, discounts and net rates","where":"The meeting room","casa":["Baby Lyca","Cecille","Leni"],"ours":["AJ"]},{"id":"tue-1230-walk-through-the-dive-shop-s","day":"tue","start":"12:30","end":"14:00","from":"12.30pm","to":"2pm","mins":90,"what":"Walk through the dive shop's routine, end to end","where":"The dive centre","casa":["Jomel","Loren"],"ours":["Jett"]},{"id":"tue-1300-a-family-in-two-rooms-on-one","day":"tue","start":"13:00","end":"14:00","from":"1pm","to":"2pm","mins":60,"what":"A family in two rooms, on one bill","where":"The front desk","casa":["Eloisa","Rhiva"],"ours":["Philip"]},{"id":"tue-1300-entering-supplier-bills-prac","day":"tue","start":"13:00","end":"14:30","from":"1pm","to":"2.30pm","mins":90,"what":"Entering supplier bills — practice","where":"The meeting room","casa":["Baby Lyca","Cecille"],"ours":["AJ"]},{"id":"tue-1400-the-guest-s-journey-and-sign","day":"tue","start":"14:00","end":"15:30","from":"2pm","to":"3.30pm","mins":90,"what":"The guest's journey, and signing a dive waiver on screen","where":"The front desk","casa":["Eloisa","Rhiva"],"ours":["Philip"]},{"id":"tue-1430-handling-deposits-practice","day":"tue","start":"14:30","end":"16:00","from":"2.30pm","to":"4pm","mins":90,"what":"Handling deposits — practice","where":"The meeting room","casa":["Baby Lyca","Cecille"],"ours":["AJ"]},{"id":"tue-1530-dives-with-nobody-assigned-t","day":"tue","start":"15:30","end":"16:30","from":"3.30pm","to":"4.30pm","mins":60,"what":"Dives with nobody assigned — the warning, and testing that it works","where":"The dive centre","casa":["Dong","Eloisa","Rhiva","Jomel","Loren"],"ours":["Philip"]},{"id":"tue-1600-recap-your-questions-and-who","day":"tue","start":"16:00","end":"17:00","from":"4pm","to":"5pm","mins":60,"what":"Recap, your questions, and who tests what on Thursday","where":"The meeting room","casa":["Baby Lyca","Cecille","Leni"],"ours":["AJ"]},{"id":"tue-1715-agree-how-the-office-and-the","day":"tue","start":"17:15","end":"18:00","from":"5.15pm","to":"6pm","mins":45,"what":"Agree how the office and the dive centre hand over","where":"The office","casa":["Dong","Eloisa","Rhiva"],"ours":["Jett"]},{"id":"wed-0900-bank-reconciliation","day":"wed","start":"09:00","end":"10:30","from":"9am","to":"10.30am","mins":90,"what":"Bank reconciliation","where":"The meeting room","casa":["Andrew","Leni","HR Head"],"ours":["AJ"]},{"id":"wed-0900-ring-real-restaurant-and-bar","day":"wed","start":"09:00","end":"12:00","from":"9am","to":"12pm","mins":180,"what":"Ring real restaurant and bar orders to a room","where":"Kitchen / restaurant","casa":["Michelle","Beth"],"ours":["Philip"]},{"id":"wed-1030-petty-cash-and-agent-booking","day":"wed","start":"10:30","end":"12:00","from":"10.30am","to":"12pm","mins":90,"what":"Petty cash and agent bookings","where":"The meeting room","casa":["Andrew"],"ours":["AJ"]},{"id":"wed-1300-gear-rental-and-dive-package","day":"wed","start":"13:00","end":"14:00","from":"1pm","to":"2pm","mins":60,"what":"Gear rental and dive packages charged to a room","where":"The dive centre","casa":["Rhiva","Jomel","Loren"],"ours":["Philip"]},{"id":"wed-1300-monthly-reporting-and-the-va","day":"wed","start":"13:00","end":"14:30","from":"1pm","to":"2.30pm","mins":90,"what":"Monthly reporting and the VAT return","where":"The meeting room","casa":["Andrew","Leni"],"ours":["AJ"]},{"id":"wed-1300-we-watch-the-till-through-a","day":"wed","start":"13:00","end":"15:30","from":"1pm","to":"3.30pm","mins":150,"what":"We watch the till through a normal service, and ask about anything still unclear","where":"Kitchen / restaurant","casa":["Eloisa"],"ours":["Jett"]},{"id":"wed-1400-counting-the-dives-used-and","day":"wed","start":"14:00","end":"15:30","from":"2pm","to":"3.30pm","mins":90,"what":"Counting the dives used, and the end-of-day check","where":"The dive centre","casa":["Jomel","Loren"],"ours":["Philip"]},{"id":"wed-1430-what-to-do-when-something-is","day":"wed","start":"14:30","end":"16:00","from":"2.30pm","to":"4pm","mins":90,"what":"What to do when something is entered wrongly","where":"The meeting room","casa":["Andrew","Leni"],"ours":["AJ"]},{"id":"wed-1530-closing-the-till-then-checki","day":"wed","start":"15:30","end":"16:30","from":"3.30pm","to":"4.30pm","mins":60,"what":"Closing the till, then checking a guest out on one bill","where":"The front desk","casa":["Eloisa","Rhiva"],"ours":["Philip"]},{"id":"wed-1600-recap-and-your-questions","day":"wed","start":"16:00","end":"17:00","from":"4pm","to":"5pm","mins":60,"what":"Recap and your questions","where":"The meeting room","casa":["Andrew","Leni"],"ours":["AJ"]},{"id":"wed-1630-splitting-one-bill-between-t","day":"wed","start":"16:30","end":"18:00","from":"4.30pm","to":"6pm","mins":90,"what":"Splitting one bill between two payers","where":"The front desk","casa":["Eloisa","Rhiva"],"ours":["Philip"]},{"id":"thu-0830-you-test-the-system-yourself","day":"thu","start":"08:30","end":"13:00","from":"8.30am","to":"1pm","mins":270,"what":"You test the system yourself — part one. We watch and say nothing","where":"The meeting room","casa":["Eloisa","Rhiva"],"ours":["Philip"]},{"id":"thu-0900-the-owner-s-own-tests-the-we","day":"thu","start":"09:00","end":"12:45","from":"9am","to":"12.45pm","mins":225,"what":"The owner's own tests — the weekly stock count, and approving a price change","where":"The office","casa":["Dong","Andrew"],"ours":["Jett"]},{"id":"thu-0900-you-test-accounting-from-end","day":"thu","start":"09:00","end":"17:00","from":"9am","to":"5pm","mins":480,"what":"You test accounting from end to end","where":"The meeting room","casa":["Baby Lyca","Cecille"],"ours":["AJ"]},{"id":"thu-1300-you-test-the-system-yourself","day":"thu","start":"13:00","end":"15:00","from":"1pm","to":"3pm","mins":120,"what":"You test the system yourself — part two","where":"The meeting room","casa":["Eloisa","Rhiva"],"ours":["Philip"]},{"id":"thu-1400-a-walk-through-the-store-the","day":"thu","start":"14:00","end":"14:50","from":"2pm","to":"2.50pm","mins":50,"what":"A walk through the store, then entering a stock count","where":"Kitchen / restaurant","casa":["Michelle","Beth"],"ours":["Jett"]},{"id":"thu-1500-you-test-the-system-yourself","day":"thu","start":"15:00","end":"16:00","from":"3pm","to":"4pm","mins":60,"what":"You test the system yourself — part three","where":"The meeting room","casa":["Eloisa","Rhiva","Jomel","Loren"],"ours":["Philip"]},{"id":"thu-1600-go-through-anything-that-did","day":"thu","start":"16:00","end":"17:00","from":"4pm","to":"5pm","mins":60,"what":"Go through anything that did not work, and agree what gets fixed here","where":"The meeting room","casa":["Eloisa","Rhiva"],"ours":["Jett","RJ","Philip"]},{"id":"fri-0900-a-short-session-for-the-whol","day":"fri","start":"09:00","end":"09:30","from":"9am","to":"9.30am","mins":30,"what":"A short session for the whole team at shift change","where":"The meeting room","casa":["The wider team"],"ours":["Jett"]},{"id":"fri-0900-working-through-what-thursda","day":"fri","start":"09:00","end":"11:00","from":"9am","to":"11am","mins":120,"what":"Working through what Thursday raised","where":"The meeting room","casa":["Leni"],"ours":["AJ"]},{"id":"fri-0945-after-we-leave-what-we-look","day":"fri","start":"09:45","end":"10:45","from":"9.45am","to":"10.45am","mins":60,"what":"After we leave — what we look after, and how to reach us","where":"The meeting room","casa":["Eloisa","Rhiva"],"ours":["Jett"]},{"id":"fri-1100-re-test-anything-you-raised","day":"fri","start":"11:00","end":"12:00","from":"11am","to":"12pm","mins":60,"what":"Re-test anything you raised","where":"The meeting room","casa":["Eloisa","Rhiva"],"ours":[]},{"id":"fri-1100-re-test-anything-that-did-no","day":"fri","start":"11:00","end":"12:00","from":"11am","to":"12pm","mins":60,"what":"Re-test anything that did not pass","where":"The meeting room","casa":["Baby Lyca","Cecille"],"ours":["AJ"]},{"id":"fri-1300-training-getting-enquiries-i","day":"fri","start":"13:00","end":"14:00","from":"1pm","to":"2pm","mins":60,"what":"Training: getting enquiries into the system, stock counts, and approving a price change","where":"The meeting room","casa":["Eloisa","Rhiva","Michelle","Beth"],"ours":["Jett"]},{"id":"fri-1300-free-practice-try-things-for","day":"fri","start":"13:00","end":"14:30","from":"1pm","to":"2.30pm","mins":90,"what":"Free practice — try things for yourself","where":"The meeting room","casa":["Baby Lyca","Cecille"],"ours":["AJ"]},{"id":"fri-1430-final-questions","day":"fri","start":"14:30","end":"15:30","from":"2.30pm","to":"3.30pm","mins":60,"what":"Final questions","where":"The meeting room","casa":["Baby Lyca","Cecille","Leni"],"ours":["AJ"]},{"id":"fri-1530-we-read-back-what-passed-are","day":"fri","start":"15:30","end":"16:00","from":"3.30pm","to":"4pm","mins":30,"what":"We read back what passed, area by area","where":"The meeting room","casa":["Dong","Andrew"],"ours":["AJ","Philip","Jett","Sky"]},{"id":"fri-1530-agree-the-go-live-date-and-h","day":"fri","start":"15:30","end":"16:00","from":"3.30pm","to":"4pm","mins":30,"what":"Agree the go-live date and how we switch over","where":"The meeting room","casa":["Andrew","Leni"],"ours":["AJ"]},{"id":"fri-1600-walk-the-readiness-checklist","day":"fri","start":"16:00","end":"16:40","from":"4pm","to":"4.40pm","mins":40,"what":"Walk the readiness checklist line by line","where":"The meeting room","casa":["Dong","Andrew"],"ours":["AJ","Philip","Jett","Sky"]},{"id":"fri-1640-signing","day":"fri","start":"16:40","end":"17:00","from":"4.40pm","to":"5pm","mins":20,"what":"Signing","where":"The meeting room","casa":["Dong","Andrew"],"ours":["AJ","Philip","Jett"]}],"people":[{"key":"dong","name":"Armando (Dong) Vergara","role":"Proprietor / General Manager","short":"Dong","sessions":["mon-1330-welcome-and-what-this-week-i","mon-1500-walk-the-property-together-r","mon-1745-we-watch-an-evening-check-ou","tue-1530-dives-with-nobody-assigned-t","tue-1715-agree-how-the-office-and-the","thu-0900-the-owner-s-own-tests-the-we","fri-1530-we-read-back-what-passed-are","fri-1600-walk-the-readiness-checklist","fri-1640-signing"],"mins":645},{"key":"andrew","name":"Andrew Oh","role":"Partner","short":"Andrew","sessions":["mon-1330-welcome-and-what-this-week-i","mon-1500-walk-the-property-together-r","wed-0900-bank-reconciliation","wed-1030-petty-cash-and-agent-booking","wed-1300-monthly-reporting-and-the-va","wed-1430-what-to-do-when-something-is","wed-1600-recap-and-your-questions","thu-0900-the-owner-s-own-tests-the-we","fri-1530-we-read-back-what-passed-are","fri-1530-agree-the-go-live-date-and-h","fri-1600-walk-the-readiness-checklist","fri-1640-signing"],"mins":945},{"key":"eloisa","name":"Eloisa C. Espino","role":"Reservation Manager","short":"Eloisa","sessions":["mon-1330-welcome-and-what-this-week-i","mon-1500-a-tour-of-the-accounting-scr","mon-1630-check-your-accounts-and-ledg","tue-0800-we-watch-how-enquiries-reach","tue-1300-a-family-in-two-rooms-on-one","tue-1400-the-guest-s-journey-and-sign","tue-1530-dives-with-nobody-assigned-t","tue-1715-agree-how-the-office-and-the","wed-1300-we-watch-the-till-through-a","wed-1530-closing-the-till-then-checki","wed-1630-splitting-one-bill-between-t","thu-0830-you-test-the-system-yourself","thu-1300-you-test-the-system-yourself","thu-1500-you-test-the-system-yourself","thu-1600-go-through-anything-that-did","fri-0945-after-we-leave-what-we-look","fri-1100-re-test-anything-you-raised","fri-1300-training-getting-enquiries-i"],"mins":1620},{"key":"rhiva","name":"Rhiva Evaine C. Garcia","role":"Reservation Officer","short":"Rhiva","sessions":["mon-1330-welcome-and-what-this-week-i","mon-1500-walk-the-property-together-r","mon-1745-we-watch-an-evening-check-ou","tue-0800-a-tour-of-the-front-desk-scr","tue-0900-take-a-booking-hold-a-room-c","tue-1300-a-family-in-two-rooms-on-one","tue-1400-the-guest-s-journey-and-sign","tue-1530-dives-with-nobody-assigned-t","tue-1715-agree-how-the-office-and-the","wed-1300-gear-rental-and-dive-package","wed-1530-closing-the-till-then-checki","wed-1630-splitting-one-bill-between-t","thu-0830-you-test-the-system-yourself","thu-1300-you-test-the-system-yourself","thu-1500-you-test-the-system-yourself","thu-1600-go-through-anything-that-did","fri-0945-after-we-leave-what-we-look","fri-1100-re-test-anything-you-raised","fri-1300-training-getting-enquiries-i"],"mins":1620},{"key":"lyca","name":"Baby Lyca N. Mendoza","role":"Accounting Officer / Dining Head","short":"Baby Lyca","sessions":["mon-1330-welcome-and-what-this-week-i","mon-1500-a-tour-of-the-accounting-scr","mon-1630-check-your-accounts-and-ledg","tue-0800-a-guided-click-through-of-th","tue-0900-a-walk-through-your-chart-of","tue-1000-setting-up-foreign-currency","tue-1100-vat-discounts-and-net-rates","tue-1300-entering-supplier-bills-prac","tue-1430-handling-deposits-practice","tue-1600-recap-your-questions-and-who","thu-0900-you-test-accounting-from-end","fri-1100-re-test-anything-that-did-no","fri-1300-free-practice-try-things-for","fri-1430-final-questions"],"mins":1455},{"key":"cecille","name":"Cecille S. Ramos","role":"Accounting Officer","short":"Cecille","sessions":["mon-1330-welcome-and-what-this-week-i","mon-1500-a-tour-of-the-accounting-scr","mon-1630-check-your-accounts-and-ledg","tue-0800-a-guided-click-through-of-th","tue-0900-a-walk-through-your-chart-of","tue-1000-setting-up-foreign-currency","tue-1100-vat-discounts-and-net-rates","tue-1300-entering-supplier-bills-prac","tue-1430-handling-deposits-practice","tue-1600-recap-your-questions-and-who","thu-0900-you-test-accounting-from-end","fri-1100-re-test-anything-that-did-no","fri-1300-free-practice-try-things-for","fri-1430-final-questions"],"mins":1455},{"key":"avelina","name":"Avelina B. Cuson","role":"Finance Manager — known as Leni","short":"Leni","sessions":["mon-1500-a-tour-of-the-accounting-scr","mon-1630-check-your-accounts-and-ledg","tue-0900-a-walk-through-your-chart-of","tue-1100-vat-discounts-and-net-rates","tue-1600-recap-your-questions-and-who","wed-0900-bank-reconciliation","wed-1300-monthly-reporting-and-the-va","wed-1430-what-to-do-when-something-is","wed-1600-recap-and-your-questions","fri-0900-working-through-what-thursda","fri-1430-final-questions","fri-1530-agree-the-go-live-date-and-h"],"mins":915},{"key":"hr_head","name":"HR Head","role":"","short":"HR Head","sessions":["wed-0900-bank-reconciliation"],"mins":90},{"key":"jomel","name":"Jomel C. Cruzat","role":"Divemaster","short":"Jomel","sessions":["tue-1230-walk-through-the-dive-shop-s","tue-1530-dives-with-nobody-assigned-t","wed-1300-gear-rental-and-dive-package","wed-1400-counting-the-dives-used-and","thu-1500-you-test-the-system-yourself"],"mins":360},{"key":"loren","name":"Loren C. Alulod","role":"Rescue Diver","short":"Loren","sessions":["tue-1230-walk-through-the-dive-shop-s","tue-1530-dives-with-nobody-assigned-t","wed-1300-gear-rental-and-dive-package","wed-1400-counting-the-dives-used-and","thu-1500-you-test-the-system-yourself"],"mins":360},{"key":"michelle","name":"Michelle C. Bantugon","role":"Kitchen Manager","short":"Michelle","sessions":["wed-0900-ring-real-restaurant-and-bar","thu-1400-a-walk-through-the-store-the","fri-1300-training-getting-enquiries-i"],"mins":290},{"key":"beth","name":"Maribeth (Beth) G. Mendoza","role":"Dining","short":"Beth","sessions":["wed-0900-ring-real-restaurant-and-bar","thu-1400-a-walk-through-the-store-the","fri-1300-training-getting-enquiries-i"],"mins":290},{"key":"wider_team","name":"The wider team","role":"about 36 people, briefly","short":"The wider team","sessions":["fri-0900-a-short-session-for-the-whol"],"mins":30}],"team":[{"name":"Jett","role":"solutions lead — reservations, people and the handover"},{"name":"Philip","role":"the property system and the till"},{"name":"AJ","role":"accounting"},{"name":"RJ","role":"project manager — keeping the week on its rails"},{"name":"Sky","role":"with you Monday and Friday"},{"name":"Rico","role":"marketing lead — presenting in the first session"},{"name":"Pia","role":"general manager"}],"needs":[{"what":"One room","detail":"A table and enough seats for whoever is listed against that block. A quiet corner of the restaurant outside service hours is fine."},{"what":"One screen","detail":"A TV or a projector in that room. A blank wall works if the projector reaches it."},{"what":"A device each","detail":"One laptop or tablet per person named in the block. Sharing a screen is fine for a walkthrough and not fine for the sessions where your staff work on their own — those are most of Thursday."},{"what":"Logins, before Monday","detail":"Everyone on this page able to sign in, from the resort's own network and devices."}]};
+const STATES = {"done":["Done","s-done"],"cancelled":["Cancelled","s-cx"],"moved":["Moved","s-mv"]};
+const PLACE = {"The meeting room":"p1","The front desk":"p2","The dive centre":"p3","Kitchen / restaurant":"p4","The office":"p5","On the boat":"p6","Around the resort":"p7"};
+
+let view = "day", pick = null, STATUS = {};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const byId = Object.fromEntries(WEEK.sessions.map(s => [s.id, s]));
+
+/* Theme: system by default, and a manual choice sticks. Wrapped because a browser with site
+   data blocked throws on the accessor itself rather than returning null. */
+function theme(set){
+  try{
+    if(set){ localStorage.setItem("casa-theme", set); }
+    const v = localStorage.getItem("casa-theme");
+    if(v){ document.documentElement.setAttribute("data-theme", v); }
+  }catch(e){ if(set){ document.documentElement.setAttribute("data-theme", set); } }
+}
+theme();
+$("#tog").addEventListener("click", () => {
+  const dark = getComputedStyle(document.body).backgroundColor.match(/\d+/g)[0] < 100;
+  theme(dark ? "light" : "dark");
+});
+
+function state(id){
+  const raw = (STATUS[id] || {});
+  const st = STATES[raw.state] ? raw.state : "";
+  return { st: st, label: st ? STATES[st][0] : "", cls: st ? STATES[st][1] : "", note: raw.note || "" };
+}
+
+/* "Now" is the viewer's own clock against the session's day. It is a convenience, never a
+   claim about what has happened -- that is what the ticked state is for. */
+function nowId(){
+  const d = new Date(), iso = d.getFullYear() + "-" +
+    String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  const day = WEEK.days.find(x => x.date === iso);
+  if(!day) return null;
+  const hm = String(d.getHours()).padStart(2,"0") + ":" + String(d.getMinutes()).padStart(2,"0");
+  const s = WEEK.sessions.find(s => s.day === day.key && s.start <= hm && hm < s.end);
+  return s ? s.id : null;
+}
+
+function today(){
+  const d = new Date(), iso = d.getFullYear() + "-" +
+    String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  const day = WEEK.days.find(x => x.date === iso);
+  return day ? day.key : null;
+}
+
+function sessionCard(s, live){
+  const t = state(s.id);
+  const cls = ["s", PLACE[s.where] || "", t.st === "done" ? "done" : "",
+               t.st === "cancelled" ? "cx" : "", s.id === live ? "now" : ""].join(" ").trim();
+  const tag = t.label ? '<span class="tag ' + t.cls + '">' + t.label + "</span>"
+            : (s.id === live ? '<span class="tag s-now">On now</span>' : "");
+  const ours = s.ours.length ? ' <span style="opacity:.7">&middot; with ' + esc(s.ours.join(", ")) + "</span>" : "";
+  return '<article class="' + cls + '">'
+    + '<div class="t">' + esc(s.from) + " &ndash; " + esc(s.to) + "</div>"
+    + '<div class="w">' + esc(s.what) + tag + "</div>"
+    + '<div class="l"><b>' + esc(s.where) + "</b> &middot; " + esc(s.casa.join(", ")) + ours + "</div>"
+    + (t.note ? '<div class="note">' + esc(t.note) + "</div>" : "")
+    + "</article>";
+}
+
+function render(){
+  const live = nowId(), out = $("#out");
+  const chips = $("#chips");
+
+  if(view === "needs"){
+    chips.innerHTML = "";
+    out.innerHTML = '<div class="note-box">For every session on this page &mdash; not once for '
+      + "the week, but each time a block runs.</div>"
+      + WEEK.needs.map(n => '<div class="card"><h3>' + esc(n.what)
+        + '</h3><p style="margin-top:6px;font-size:14.5px">' + esc(n.detail) + "</p></div>").join("");
+    $("#meta").innerHTML = ""; $("#prog").style.display = "none";
+    return;
+  }
+  $("#prog").style.display = "";
+
+  if(view === "day"){
+    const days = WEEK.days;
+    if(pick === null || !days.some(d => d.key === pick)) pick = today() || days[0].key;
+    chips.innerHTML = days.map(d => '<button aria-pressed="' + (d.key === pick) + '" data-k="'
+      + d.key + '">' + esc(d.label.split(" ")[0]) + (d.key === today() ? " &middot; today" : "")
+      + "</button>").join("");
+    const day = days.find(d => d.key === pick);
+    const list = WEEK.sessions.filter(s => s.day === pick);
+    const done = list.filter(s => state(s.id).st === "done").length;
+    $("#meta").innerHTML = "<span>" + esc(day.label) + "</span><span>" + list.length
+      + " sessions</span><span>" + done + " done</span>";
+    $("#prog").firstChild.style.width = (list.length ? done / list.length * 100 : 0) + "%";
+    out.innerHTML = list.length
+      ? '<h2 class="day">' + esc(day.label) + "</h2>" + list.map(s => sessionCard(s, live)).join("")
+      : '<div class="empty">Nothing scheduled on this day.</div>';
+    return;
+  }
+
+  const people = WEEK.people;
+  if(pick === null || !people.some(p => p.key === pick)) pick = people[0].key;
+  chips.innerHTML = people.map(p => '<button aria-pressed="' + (p.key === pick) + '" data-k="'
+    + p.key + '">' + esc(p.short) + "</button>").join("");
+  const p = people.find(x => x.key === pick);
+  const list = p.sessions.map(i => byId[i]);
+  const done = list.filter(s => state(s.id).st === "done").length;
+  $("#meta").innerHTML = "<span>" + esc(p.name) + "</span><span>" + list.length
+    + " sessions</span><span>" + done + " done</span>";
+  $("#prog").firstChild.style.width = (list.length ? done / list.length * 100 : 0) + "%";
+
+  let html = '<div class="card"><h3>' + esc(p.name) + '<span class="rl">' + esc(p.role)
+    + "</span></h3>";
+  for(const d of WEEK.days){
+    const mine = list.filter(s => s.day === d.key);
+    if(!mine.length) continue;
+    html += '<div class="pday">' + esc(d.label) + "</div>";
+    html += mine.map(s => {
+      const t = state(s.id);
+      return '<div class="pr' + (t.st === "done" ? " done" : "") + '">'
+        + '<div class="pt">' + esc(s.from) + "</div><div class=\"px\">" + esc(s.what)
+        + (t.label ? ' <span class="tag ' + t.cls + '">' + t.label + "</span>" : "")
+        + '<span class="pw">' + esc(s.where) + "</span></div></div>";
+    }).join("");
+  }
+  out.innerHTML = html + "</div>";
+}
+
+$("#chips").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  pick = b.dataset.k; render();
+});
+for(const [id, v] of [["#v-day","day"],["#v-person","person"],["#v-needs","needs"]]){
+  $(id).addEventListener("click", () => {
+    view = v; pick = null;
+    for(const o of ["#v-day","#v-person","#v-needs"]) $(o).setAttribute("aria-selected", o === id);
+    render();
+  });
+}
+
+/* status.json is fetched, never baked in, so a one-line commit is live without a rebuild.
+   If it cannot be read the page still shows the whole schedule -- it just shows nothing
+   ticked, which is the safe way round. */
+fetch("status.json?t=" + Date.now(), {cache: "no-store"})
+  .then(r => r.ok ? r.json() : null)
+  .then(j => { if(j && j.sessions) STATUS = j.sessions; render(); })
+  .catch(() => render());
+render();
+setInterval(render, 60000);
+</script>
+</body>
+</html>

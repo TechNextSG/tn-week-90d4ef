@@ -1,0 +1,314 @@
+{
+  "_readme": [
+    "This is the ONLY file to edit by hand. Everything else on this site is generated.",
+    "",
+    "To mark a session done, set its \"state\" to \"done\". Also accepted: \"cancelled\", \"moved\".",
+    "Leave it \"\" for a session that has not happened yet. Anything else is ignored.",
+    "\"note\" is optional and shows as a line under the session -- use it for \"moved to 3pm\".",
+    "",
+    "Edit it on github.com, commit, and the page shows it within a minute. No rebuild needed.",
+    "The \"title\" fields are here so you can see what you are ticking; changing one does nothing."
+  ],
+  "sessions": {
+    "mon-1330-welcome-and-what-this-week-i": {
+      "when": "Monday 31 August, 1.30pm",
+      "title": "Welcome, and what this week is for",
+      "state": "",
+      "note": ""
+    },
+    "mon-1500-walk-the-property-together-r": {
+      "when": "Monday 31 August, 3pm",
+      "title": "Walk the property together — rooms, rates, the menu and the dive list",
+      "state": "",
+      "note": ""
+    },
+    "mon-1500-a-tour-of-the-accounting-scr": {
+      "when": "Monday 31 August, 3pm",
+      "title": "A tour of the accounting screens",
+      "state": "",
+      "note": ""
+    },
+    "mon-1630-check-your-accounts-and-ledg": {
+      "when": "Monday 31 August, 4.30pm",
+      "title": "Check your accounts and ledgers",
+      "state": "",
+      "note": ""
+    },
+    "mon-1745-we-watch-an-evening-check-ou": {
+      "when": "Monday 31 August, 5.45pm",
+      "title": "We watch an evening check-out, exactly as you do it now",
+      "state": "",
+      "note": ""
+    },
+    "tue-0800-a-tour-of-the-front-desk-scr": {
+      "when": "Tuesday 1 September, 8am",
+      "title": "A tour of the front-desk screens",
+      "state": "",
+      "note": ""
+    },
+    "tue-0800-a-guided-click-through-of-th": {
+      "when": "Tuesday 1 September, 8am",
+      "title": "A guided click-through of the accounting screens",
+      "state": "",
+      "note": ""
+    },
+    "tue-0800-we-watch-how-enquiries-reach": {
+      "when": "Tuesday 1 September, 8am",
+      "title": "We watch how enquiries reach you today, and time them",
+      "state": "",
+      "note": ""
+    },
+    "tue-0900-a-walk-through-your-chart-of": {
+      "when": "Tuesday 1 September, 9am",
+      "title": "A walk through your chart of accounts",
+      "state": "",
+      "note": ""
+    },
+    "tue-0900-take-a-booking-hold-a-room-c": {
+      "when": "Tuesday 1 September, 9am",
+      "title": "Take a booking, hold a room, check a guest in",
+      "state": "",
+      "note": ""
+    },
+    "tue-1000-setting-up-foreign-currency": {
+      "when": "Tuesday 1 September, 10am",
+      "title": "Setting up foreign currency",
+      "state": "",
+      "note": ""
+    },
+    "tue-1100-vat-discounts-and-net-rates": {
+      "when": "Tuesday 1 September, 11am",
+      "title": "VAT, discounts and net rates",
+      "state": "",
+      "note": ""
+    },
+    "tue-1230-walk-through-the-dive-shop-s": {
+      "when": "Tuesday 1 September, 12.30pm",
+      "title": "Walk through the dive shop's routine, end to end",
+      "state": "",
+      "note": ""
+    },
+    "tue-1300-a-family-in-two-rooms-on-one": {
+      "when": "Tuesday 1 September, 1pm",
+      "title": "A family in two rooms, on one bill",
+      "state": "",
+      "note": ""
+    },
+    "tue-1300-entering-supplier-bills-prac": {
+      "when": "Tuesday 1 September, 1pm",
+      "title": "Entering supplier bills — practice",
+      "state": "",
+      "note": ""
+    },
+    "tue-1400-the-guest-s-journey-and-sign": {
+      "when": "Tuesday 1 September, 2pm",
+      "title": "The guest's journey, and signing a dive waiver on screen",
+      "state": "",
+      "note": ""
+    },
+    "tue-1430-handling-deposits-practice": {
+      "when": "Tuesday 1 September, 2.30pm",
+      "title": "Handling deposits — practice",
+      "state": "",
+      "note": ""
+    },
+    "tue-1530-dives-with-nobody-assigned-t": {
+      "when": "Tuesday 1 September, 3.30pm",
+      "title": "Dives with nobody assigned — the warning, and testing that it works",
+      "state": "",
+      "note": ""
+    },
+    "tue-1600-recap-your-questions-and-who": {
+      "when": "Tuesday 1 September, 4pm",
+      "title": "Recap, your questions, and who tests what on Thursday",
+      "state": "",
+      "note": ""
+    },
+    "tue-1715-agree-how-the-office-and-the": {
+      "when": "Tuesday 1 September, 5.15pm",
+      "title": "Agree how the office and the dive centre hand over",
+      "state": "",
+      "note": ""
+    },
+    "wed-0900-bank-reconciliation": {
+      "when": "Wednesday 2 September, 9am",
+      "title": "Bank reconciliation",
+      "state": "",
+      "note": ""
+    },
+    "wed-0900-ring-real-restaurant-and-bar": {
+      "when": "Wednesday 2 September, 9am",
+      "title": "Ring real restaurant and bar orders to a room",
+      "state": "",
+      "note": ""
+    },
+    "wed-1030-petty-cash-and-agent-booking": {
+      "when": "Wednesday 2 September, 10.30am",
+      "title": "Petty cash and agent bookings",
+      "state": "",
+      "note": ""
+    },
+    "wed-1300-gear-rental-and-dive-package": {
+      "when": "Wednesday 2 September, 1pm",
+      "title": "Gear rental and dive packages charged to a room",
+      "state": "",
+      "note": ""
+    },
+    "wed-1300-monthly-reporting-and-the-va": {
+      "when": "Wednesday 2 September, 1pm",
+      "title": "Monthly reporting and the VAT return",
+      "state": "",
+      "note": ""
+    },
+    "wed-1300-we-watch-the-till-through-a": {
+      "when": "Wednesday 2 September, 1pm",
+      "title": "We watch the till through a normal service, and ask about anything still unclear",
+      "state": "",
+      "note": ""
+    },
+    "wed-1400-counting-the-dives-used-and": {
+      "when": "Wednesday 2 September, 2pm",
+      "title": "Counting the dives used, and the end-of-day check",
+      "state": "",
+      "note": ""
+    },
+    "wed-1430-what-to-do-when-something-is": {
+      "when": "Wednesday 2 September, 2.30pm",
+      "title": "What to do when something is entered wrongly",
+      "state": "",
+      "note": ""
+    },
+    "wed-1530-closing-the-till-then-checki": {
+      "when": "Wednesday 2 September, 3.30pm",
+      "title": "Closing the till, then checking a guest out on one bill",
+      "state": "",
+      "note": ""
+    },
+    "wed-1600-recap-and-your-questions": {
+      "when": "Wednesday 2 September, 4pm",
+      "title": "Recap and your questions",
+      "state": "",
+      "note": ""
+    },
+    "wed-1630-splitting-one-bill-between-t": {
+      "when": "Wednesday 2 September, 4.30pm",
+      "title": "Splitting one bill between two payers",
+      "state": "",
+      "note": ""
+    },
+    "thu-0830-you-test-the-system-yourself": {
+      "when": "Thursday 3 September, 8.30am",
+      "title": "You test the system yourself — part one. We watch and say nothing",
+      "state": "",
+      "note": ""
+    },
+    "thu-0900-the-owner-s-own-tests-the-we": {
+      "when": "Thursday 3 September, 9am",
+      "title": "The owner's own tests — the weekly stock count, and approving a price change",
+      "state": "",
+      "note": ""
+    },
+    "thu-0900-you-test-accounting-from-end": {
+      "when": "Thursday 3 September, 9am",
+      "title": "You test accounting from end to end",
+      "state": "",
+      "note": ""
+    },
+    "thu-1300-you-test-the-system-yourself": {
+      "when": "Thursday 3 September, 1pm",
+      "title": "You test the system yourself — part two",
+      "state": "",
+      "note": ""
+    },
+    "thu-1400-a-walk-through-the-store-the": {
+      "when": "Thursday 3 September, 2pm",
+      "title": "A walk through the store, then entering a stock count",
+      "state": "",
+      "note": ""
+    },
+    "thu-1500-you-test-the-system-yourself": {
+      "when": "Thursday 3 September, 3pm",
+      "title": "You test the system yourself — part three",
+      "state": "",
+      "note": ""
+    },
+    "thu-1600-go-through-anything-that-did": {
+      "when": "Thursday 3 September, 4pm",
+      "title": "Go through anything that did not work, and agree what gets fixed here",
+      "state": "",
+      "note": ""
+    },
+    "fri-0900-a-short-session-for-the-whol": {
+      "when": "Friday 4 September, 9am",
+      "title": "A short session for the whole team at shift change",
+      "state": "",
+      "note": ""
+    },
+    "fri-0900-working-through-what-thursda": {
+      "when": "Friday 4 September, 9am",
+      "title": "Working through what Thursday raised",
+      "state": "",
+      "note": ""
+    },
+    "fri-0945-after-we-leave-what-we-look": {
+      "when": "Friday 4 September, 9.45am",
+      "title": "After we leave — what we look after, and how to reach us",
+      "state": "",
+      "note": ""
+    },
+    "fri-1100-re-test-anything-you-raised": {
+      "when": "Friday 4 September, 11am",
+      "title": "Re-test anything you raised",
+      "state": "",
+      "note": ""
+    },
+    "fri-1100-re-test-anything-that-did-no": {
+      "when": "Friday 4 September, 11am",
+      "title": "Re-test anything that did not pass",
+      "state": "",
+      "note": ""
+    },
+    "fri-1300-training-getting-enquiries-i": {
+      "when": "Friday 4 September, 1pm",
+      "title": "Training: getting enquiries into the system, stock counts, and approving a price change",
+      "state": "",
+      "note": ""
+    },
+    "fri-1300-free-practice-try-things-for": {
+      "when": "Friday 4 September, 1pm",
+      "title": "Free practice — try things for yourself",
+      "state": "",
+      "note": ""
+    },
+    "fri-1430-final-questions": {
+      "when": "Friday 4 September, 2.30pm",
+      "title": "Final questions",
+      "state": "",
+      "note": ""
+    },
+    "fri-1530-we-read-back-what-passed-are": {
+      "when": "Friday 4 September, 3.30pm",
+      "title": "We read back what passed, area by area",
+      "state": "",
+      "note": ""
+    },
+    "fri-1530-agree-the-go-live-date-and-h": {
+      "when": "Friday 4 September, 3.30pm",
+      "title": "Agree the go-live date and how we switch over",
+      "state": "",
+      "note": ""
+    },
+    "fri-1600-walk-the-readiness-checklist": {
+      "when": "Friday 4 September, 4pm",
+      "title": "Walk the readiness checklist line by line",
+      "state": "",
+      "note": ""
+    },
+    "fri-1640-signing": {
+      "when": "Friday 4 September, 4.40pm",
+      "title": "Signing",
+      "state": "",
+      "note": ""
+    }
+  }
+}
