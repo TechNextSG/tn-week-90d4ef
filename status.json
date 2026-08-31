@@ -214,8 +214,14 @@
       "state": "",
       "note": ""
     },
-    "thu-0830-you-test-the-system-yourself": {
-      "when": "Thursday 3 September, 8.30am",
+    "thu-0800-where-a-stock-count-gets-ent": {
+      "when": "Thursday 3 September, 8am",
+      "title": "Where a stock count gets entered, and you enter one yourself",
+      "state": "",
+      "note": ""
+    },
+    "thu-0800-you-test-the-system-yourself": {
+      "when": "Thursday 3 September, 8am",
       "title": "You test the system yourself — part one. We watch and say nothing",
       "state": "",
       "note": ""
@@ -235,12 +241,6 @@
     "thu-1300-you-test-the-system-yourself": {
       "when": "Thursday 3 September, 1pm",
       "title": "You test the system yourself — part two",
-      "state": "",
-      "note": ""
-    },
-    "thu-1400-where-a-stock-count-gets-ent": {
-      "when": "Thursday 3 September, 2pm",
-      "title": "Where a stock count gets entered, and you enter one yourself",
       "state": "",
       "note": ""
     },
@@ -289,8 +289,8 @@
     "fri-1300-training-getting-enquiries-i": {
       "when": "Friday 4 September, 1pm",
       "title": "Training: getting enquiries into the system, stock counts, and approving a price change",
-      "state": "",
-      "note": ""
+      "state": "cancelled",
+      "note": "Not needed - the stock count and price approval are now covered on Thursday morning, and the enquiry side is handled with Philip."
     },
     "fri-1300-free-practice-try-things-for": {
       "when": "Friday 4 September, 1pm",

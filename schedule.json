@@ -760,12 +760,33 @@
    "flag": ""
   },
   {
-   "id": "thu-0830-you-test-the-system-yourself",
+   "id": "thu-0800-where-a-stock-count-gets-ent",
    "day": "thu",
-   "start": "08:30",
-   "end": "13:00",
-   "from": "8.30am",
-   "to": "1pm",
+   "start": "08:00",
+   "end": "08:50",
+   "from": "8am",
+   "to": "8.50am",
+   "mins": 50,
+   "what": "Where a stock count gets entered, and you enter one yourself",
+   "where": "The meeting room",
+   "casa": [
+    "Michelle",
+    "Beth"
+   ],
+   "ours": [
+    "Jett"
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": "moved"
+  },
+  {
+   "id": "thu-0800-you-test-the-system-yourself",
+   "day": "thu",
+   "start": "08:00",
+   "end": "12:30",
+   "from": "8am",
+   "to": "12.30pm",
    "mins": 270,
    "what": "You test the system yourself — part one. We watch and say nothing",
    "where": "The meeting room",
@@ -842,27 +863,6 @@
    "owner": "Philip",
    "ocls": "o-philip",
    "flag": ""
-  },
-  {
-   "id": "thu-1400-where-a-stock-count-gets-ent",
-   "day": "thu",
-   "start": "14:00",
-   "end": "14:50",
-   "from": "2pm",
-   "to": "2.50pm",
-   "mins": 50,
-   "what": "Where a stock count gets entered, and you enter one yourself",
-   "where": "The meeting room",
-   "casa": [
-    "Michelle",
-    "Beth"
-   ],
-   "ours": [
-    "Jett"
-   ],
-   "owner": "Jett",
-   "ocls": "o-jett",
-   "flag": "moved"
   },
   {
    "id": "thu-1500-you-test-the-system-yourself",
@@ -1226,7 +1226,7 @@
     "wed-1035-training-adding-your-own-pro",
     "wed-1530-closing-the-till-then-checki",
     "wed-1630-splitting-one-bill-between-t",
-    "thu-0830-you-test-the-system-yourself",
+    "thu-0800-you-test-the-system-yourself",
     "thu-0900-you-run-it-yourself-the-week",
     "thu-1300-you-test-the-system-yourself",
     "thu-1500-you-test-the-system-yourself",
@@ -1256,7 +1256,7 @@
     "wed-1300-gear-rental-and-dive-package",
     "wed-1530-closing-the-till-then-checki",
     "wed-1630-splitting-one-bill-between-t",
-    "thu-0830-you-test-the-system-yourself",
+    "thu-0800-you-test-the-system-yourself",
     "thu-1300-you-test-the-system-yourself",
     "thu-1500-you-test-the-system-yourself",
     "thu-1600-go-through-anything-that-did",
@@ -1379,7 +1379,7 @@
    "sessions": [
     "tue-1000-we-walk-your-store-together",
     "wed-0900-ring-real-restaurant-and-bar",
-    "thu-1400-where-a-stock-count-gets-ent",
+    "thu-0800-where-a-stock-count-gets-ent",
     "fri-1300-training-getting-enquiries-i"
    ],
    "mins": 350
@@ -1393,8 +1393,8 @@
     "tue-1000-we-walk-your-store-together",
     "wed-0900-ring-real-restaurant-and-bar",
     "wed-1300-we-watch-the-till-through-a",
+    "thu-0800-where-a-stock-count-gets-ent",
     "thu-0900-you-run-it-yourself-the-week",
-    "thu-1400-where-a-stock-count-gets-ent",
     "fri-1300-training-getting-enquiries-i"
    ],
    "mins": 725
