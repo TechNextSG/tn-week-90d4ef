@@ -1,0 +1,6 @@
+# Build output. The page is built from tracks/*.md by the workflow and served from the build,
+# so these are not part of the repository -- but `python build.py` writes them here when run
+# locally, which is useful for previewing before a push.
+/index.html
+/schedule.json
+/_out/
