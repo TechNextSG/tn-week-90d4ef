@@ -136,8 +136,8 @@
       "state": "",
       "note": ""
     },
-    "wed-0900-we-watch-how-linen-amenities": {
-      "when": "Wednesday 2 September, 9am",
+    "wed-0800-we-watch-how-linen-amenities": {
+      "when": "Wednesday 2 September, 8am",
       "title": "We watch how linen, amenities and supplies are counted today — nothing to prepare",
       "state": "",
       "note": ""
@@ -181,8 +181,8 @@
     "wed-1300-we-watch-the-till-through-a": {
       "when": "Wednesday 2 September, 1pm",
       "title": "We watch the till through a normal service, and ask about anything still unclear",
-      "state": "",
-      "note": ""
+      "state": "cancelled",
+      "note": "Not needed - the same till is covered with Beth and Michelle on Wednesday morning, 9am to 12. Nothing to do at 1pm."
     },
     "wed-1400-counting-the-dives-used-and": {
       "when": "Wednesday 2 September, 2pm",
