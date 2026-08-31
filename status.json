@@ -70,21 +70,15 @@
       "state": "",
       "note": ""
     },
-    "tue-1000-we-watch-how-the-kitchen-and": {
+    "tue-1000-we-walk-your-store-together": {
       "when": "Tuesday 1 September, 10am",
-      "title": "We watch how the kitchen and dining store is counted today — nothing to prepare",
+      "title": "We walk your store together, watch how you count it today, and then do a count with you",
       "state": "",
       "note": ""
     },
     "tue-1000-setting-up-foreign-currency": {
       "when": "Tuesday 1 September, 10am",
       "title": "Setting up foreign currency",
-      "state": "",
-      "note": ""
-    },
-    "tue-1100-we-watch-how-linen-amenities": {
-      "when": "Tuesday 1 September, 11am",
-      "title": "We watch how linen, amenities and supplies are counted today — nothing to prepare",
       "state": "",
       "note": ""
     },
@@ -139,6 +133,12 @@
     "tue-1715-agree-how-the-office-and-the": {
       "when": "Tuesday 1 September, 5.15pm",
       "title": "Agree how the office and the dive centre hand over",
+      "state": "",
+      "note": ""
+    },
+    "wed-0900-we-watch-how-linen-amenities": {
+      "when": "Wednesday 2 September, 9am",
+      "title": "We watch how linen, amenities and supplies are counted today — nothing to prepare",
       "state": "",
       "note": ""
     },
@@ -238,9 +238,9 @@
       "state": "",
       "note": ""
     },
-    "thu-1400-a-walk-through-the-store-the": {
+    "thu-1400-where-a-stock-count-gets-ent": {
       "when": "Thursday 3 September, 2pm",
-      "title": "A walk through the store, then entering a stock count",
+      "title": "Where a stock count gets entered, and you enter one yourself",
       "state": "",
       "note": ""
     },

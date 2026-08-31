@@ -52,7 +52,10 @@
     "Philip",
     "Jett",
     "Rico"
-   ]
+   ],
+   "owner": "More than one of us",
+   "ocls": "o-team",
+   "flag": ""
   },
   {
    "id": "mon-1500-walk-the-property-together-r",
@@ -72,7 +75,10 @@
    "ours": [
     "Philip",
     "Jett"
-   ]
+   ],
+   "owner": "More than one of us",
+   "ocls": "o-team",
+   "flag": ""
   },
   {
    "id": "mon-1500-a-tour-of-the-accounting-scr",
@@ -92,7 +98,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "mon-1630-check-your-accounts-and-ledg",
@@ -112,7 +121,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "mon-1745-we-watch-an-evening-check-ou",
@@ -130,7 +142,10 @@
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
   },
   {
    "id": "tue-0800-a-tour-of-the-front-desk-scr",
@@ -147,7 +162,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "tue-0800-a-guided-click-through-of-th",
@@ -165,7 +183,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "tue-0800-we-watch-how-enquiries-reach",
@@ -182,7 +203,10 @@
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
   },
   {
    "id": "tue-0900-a-walk-through-your-chart-of",
@@ -201,7 +225,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "tue-0900-take-a-booking-hold-a-room-c",
@@ -218,24 +245,31 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
-   "id": "tue-1000-we-watch-how-the-kitchen-and",
+   "id": "tue-1000-we-walk-your-store-together",
    "day": "tue",
    "start": "10:00",
    "end": "11:00",
    "from": "10am",
    "to": "11am",
    "mins": 60,
-   "what": "We watch how the kitchen and dining store is counted today — nothing to prepare",
+   "what": "We walk your store together, watch how you count it today, and then do a count with you",
    "where": "Kitchen / restaurant",
    "casa": [
+    "Michelle",
     "Beth"
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": "new"
   },
   {
    "id": "tue-1000-setting-up-foreign-currency",
@@ -253,24 +287,10 @@
    ],
    "ours": [
     "AJ"
-   ]
-  },
-  {
-   "id": "tue-1100-we-watch-how-linen-amenities",
-   "day": "tue",
-   "start": "11:00",
-   "end": "12:00",
-   "from": "11am",
-   "to": "12pm",
-   "mins": 60,
-   "what": "We watch how linen, amenities and supplies are counted today — nothing to prepare",
-   "where": "Around the resort",
-   "casa": [
-    "Eloisa"
    ],
-   "ours": [
-    "Jett"
-   ]
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "tue-1100-vat-discounts-and-net-rates",
@@ -289,7 +309,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "tue-1230-walk-through-the-dive-shop-s",
@@ -307,7 +330,10 @@
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
   },
   {
    "id": "tue-1300-a-family-in-two-rooms-on-one",
@@ -325,7 +351,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "tue-1300-entering-supplier-bills-prac",
@@ -343,7 +372,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "tue-1400-the-guest-s-journey-and-sign",
@@ -361,7 +393,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "tue-1430-handling-deposits-practice",
@@ -379,7 +414,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "tue-1530-dives-with-nobody-assigned-t",
@@ -400,7 +438,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "tue-1600-recap-your-questions-and-who",
@@ -419,7 +460,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "tue-1715-agree-how-the-office-and-the",
@@ -438,7 +482,30 @@
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
+  },
+  {
+   "id": "wed-0900-we-watch-how-linen-amenities",
+   "day": "wed",
+   "start": "09:00",
+   "end": "10:00",
+   "from": "9am",
+   "to": "10am",
+   "mins": 60,
+   "what": "We watch how linen, amenities and supplies are counted today — nothing to prepare",
+   "where": "Around the resort",
+   "casa": [
+    "Eloisa"
+   ],
+   "ours": [
+    "Jett"
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": "tbc"
   },
   {
    "id": "wed-0900-bank-reconciliation",
@@ -457,7 +524,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "wed-0900-ring-real-restaurant-and-bar",
@@ -475,7 +545,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "wed-1030-petty-cash-and-agent-booking",
@@ -492,7 +565,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "wed-1035-training-adding-your-own-pro",
@@ -510,7 +586,10 @@
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
   },
   {
    "id": "wed-1300-gear-rental-and-dive-package",
@@ -529,7 +608,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "wed-1300-monthly-reporting-and-the-va",
@@ -547,7 +629,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "wed-1300-we-watch-the-till-through-a",
@@ -560,11 +645,14 @@
    "what": "We watch the till through a normal service, and ask about anything still unclear",
    "where": "Kitchen / restaurant",
    "casa": [
-    "Eloisa"
+    "Beth"
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
   },
   {
    "id": "wed-1400-counting-the-dives-used-and",
@@ -582,7 +670,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "wed-1430-what-to-do-when-something-is",
@@ -600,7 +691,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "wed-1530-closing-the-till-then-checki",
@@ -618,7 +712,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "wed-1600-recap-and-your-questions",
@@ -636,7 +733,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "wed-1630-splitting-one-bill-between-t",
@@ -654,7 +754,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "thu-0830-you-test-the-system-yourself",
@@ -672,7 +775,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "thu-0900-you-run-it-yourself-the-week",
@@ -690,7 +796,10 @@
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
   },
   {
    "id": "thu-0900-you-test-accounting-from-end",
@@ -708,7 +817,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "thu-1300-you-test-the-system-yourself",
@@ -726,25 +838,31 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
-   "id": "thu-1400-a-walk-through-the-store-the",
+   "id": "thu-1400-where-a-stock-count-gets-ent",
    "day": "thu",
    "start": "14:00",
    "end": "14:50",
    "from": "2pm",
    "to": "2.50pm",
    "mins": 50,
-   "what": "A walk through the store, then entering a stock count",
-   "where": "Kitchen / restaurant",
+   "what": "Where a stock count gets entered, and you enter one yourself",
+   "where": "The meeting room",
    "casa": [
     "Michelle",
     "Beth"
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": "moved"
   },
   {
    "id": "thu-1500-you-test-the-system-yourself",
@@ -764,7 +882,10 @@
    ],
    "ours": [
     "Philip"
-   ]
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
+   "flag": ""
   },
   {
    "id": "thu-1600-go-through-anything-that-did",
@@ -784,7 +905,10 @@
     "Jett",
     "RJ",
     "Philip"
-   ]
+   ],
+   "owner": "More than one of us",
+   "ocls": "o-team",
+   "flag": ""
   },
   {
    "id": "fri-0900-a-short-session-for-the-whol",
@@ -801,7 +925,10 @@
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
   },
   {
    "id": "fri-0900-working-through-what-thursda",
@@ -818,7 +945,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "fri-0945-after-we-leave-what-we-look",
@@ -836,7 +966,10 @@
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
   },
   {
    "id": "fri-1100-re-test-anything-you-raised",
@@ -852,7 +985,10 @@
     "Eloisa",
     "Rhiva"
    ],
-   "ours": []
+   "ours": [],
+   "owner": "More than one of us",
+   "ocls": "o-team",
+   "flag": ""
   },
   {
    "id": "fri-1100-re-test-anything-that-did-no",
@@ -870,7 +1006,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "fri-1300-training-getting-enquiries-i",
@@ -890,7 +1029,10 @@
    ],
    "ours": [
     "Jett"
-   ]
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": ""
   },
   {
    "id": "fri-1300-free-practice-try-things-for",
@@ -908,7 +1050,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "fri-1430-final-questions",
@@ -927,7 +1072,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "fri-1530-we-read-back-what-passed-are",
@@ -948,7 +1096,10 @@
     "Philip",
     "Jett",
     "Sky"
-   ]
+   ],
+   "owner": "More than one of us",
+   "ocls": "o-team",
+   "flag": ""
   },
   {
    "id": "fri-1530-agree-the-go-live-date-and-h",
@@ -966,7 +1117,10 @@
    ],
    "ours": [
     "AJ"
-   ]
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
   },
   {
    "id": "fri-1600-walk-the-readiness-checklist",
@@ -987,7 +1141,10 @@
     "Philip",
     "Jett",
     "Sky"
-   ]
+   ],
+   "owner": "More than one of us",
+   "ocls": "o-team",
+   "flag": ""
   },
   {
    "id": "fri-1640-signing",
@@ -1007,7 +1164,10 @@
     "AJ",
     "Philip",
     "Jett"
-   ]
+   ],
+   "owner": "More than one of us",
+   "ocls": "o-team",
+   "flag": ""
   }
  ],
  "people": [
@@ -1058,13 +1218,12 @@
     "mon-1500-a-tour-of-the-accounting-scr",
     "mon-1630-check-your-accounts-and-ledg",
     "tue-0800-we-watch-how-enquiries-reach",
-    "tue-1100-we-watch-how-linen-amenities",
     "tue-1300-a-family-in-two-rooms-on-one",
     "tue-1400-the-guest-s-journey-and-sign",
     "tue-1530-dives-with-nobody-assigned-t",
     "tue-1715-agree-how-the-office-and-the",
+    "wed-0900-we-watch-how-linen-amenities",
     "wed-1035-training-adding-your-own-pro",
-    "wed-1300-we-watch-the-till-through-a",
     "wed-1530-closing-the-till-then-checki",
     "wed-1630-splitting-one-bill-between-t",
     "thu-0830-you-test-the-system-yourself",
@@ -1076,7 +1235,7 @@
     "fri-1100-re-test-anything-you-raised",
     "fri-1300-training-getting-enquiries-i"
    ],
-   "mins": 1990
+   "mins": 1840
   },
   {
    "key": "rhiva",
@@ -1218,11 +1377,12 @@
    "role": "Kitchen Manager",
    "short": "Michelle",
    "sessions": [
+    "tue-1000-we-walk-your-store-together",
     "wed-0900-ring-real-restaurant-and-bar",
-    "thu-1400-a-walk-through-the-store-the",
+    "thu-1400-where-a-stock-count-gets-ent",
     "fri-1300-training-getting-enquiries-i"
    ],
-   "mins": 290
+   "mins": 350
   },
   {
    "key": "beth",
@@ -1230,13 +1390,14 @@
    "role": "Dining",
    "short": "Beth",
    "sessions": [
-    "tue-1000-we-watch-how-the-kitchen-and",
+    "tue-1000-we-walk-your-store-together",
     "wed-0900-ring-real-restaurant-and-bar",
+    "wed-1300-we-watch-the-till-through-a",
     "thu-0900-you-run-it-yourself-the-week",
-    "thu-1400-a-walk-through-the-store-the",
+    "thu-1400-where-a-stock-count-gets-ent",
     "fri-1300-training-getting-enquiries-i"
    ],
-   "mins": 575
+   "mins": 725
   },
   {
    "key": "wider_team",
@@ -1295,6 +1456,10 @@
   {
    "what": "Logins, before Monday",
    "detail": "Everyone on this page able to sign in, from the resort's own network and devices."
+  },
+  {
+   "what": "Your count days, as soon as you can",
+   "detail": "Housekeeping and the dive shop each count their own stock on their own schedule. Tell us which day and roughly what time each of them counts this week, and we will sit in on one rather than ask anyone to do it twice. The dining and bar count daily, so that one we can simply join."
   }
  ],
  "_readme": [
