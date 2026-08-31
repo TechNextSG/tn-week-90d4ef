@@ -21,7 +21,7 @@ Row order is the order people appear on the page. `called` is what the page prin
 | loren | Loren C. Alulod | Rescue Diver | Loren |
 | michelle | Michelle C. Bantugon | Kitchen Manager | Michelle |
 | beth | Maribeth (Beth) G. Mendoza | Dining | Beth |
-| bar_opener | Whoever opens the bar | the person who does the actual count | Whoever opens the bar |
+| bar_opener | Whoever counts the bar | the person who does the actual count | Whoever counts the bar |
 | wider_team | The wider team | about 36 people, briefly | The wider team |
 
 ## Us
