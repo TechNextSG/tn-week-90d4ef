@@ -1,0 +1,30 @@
+{
+ "_readme": [
+  "Cross-track double-bookings that already existed at cutover.",
+  "Keyed on the id pair, so moving a session does not resurface it.",
+  "The build reports clashes ABOVE this baseline and never refuses."
+ ],
+ "clashes": [
+  {
+   "pair": [
+    "fri-1530-agree-the-go-live-date-and-h",
+    "fri-1530-we-read-back-what-passed-are"
+   ],
+   "people": [
+    "acct_implementer",
+    "andrew"
+   ],
+   "note": "pre-existing on fri, accepted"
+  },
+  {
+   "pair": [
+    "thu-0800-you-test-the-system-yourself",
+    "thu-0900-you-run-it-yourself-the-week"
+   ],
+   "people": [
+    "eloisa"
+   ],
+   "note": "pre-existing on thu, accepted"
+  }
+ ]
+}

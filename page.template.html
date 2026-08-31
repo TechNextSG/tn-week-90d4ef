@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b4f5c" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08161c" media="(prefers-color-scheme: dark)">
+<title>@@CLIENT@@ &mdash; your week, day by day</title>
+<style>
+:root{
+  --bg:#f4f7f8; --card:#ffffff; --ink:#10212a; --body:#35494f; --muted:#6b7f88;
+  --line:#dde6e9; --line2:#eef3f5; --accent:#0d7490; --accent-ink:#ffffff;
+  --accent-soft:#e4f1f5; --sand:#a86f38; --sand-soft:#fbf1e6;
+  --ok:#0f6b45; --ok-soft:#e4f4ec; --warn:#8a5a12; --warn-soft:#fbf1e0;
+  --stop:#8f2f2f; --stop-soft:#fbeaea; --shadow:0 1px 2px rgba(16,33,42,.06);
+  --now:#0d7490;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d1719; --card:#14232a; --ink:#eaf3f6; --body:#c1d2d9; --muted:#8ba3ac;
+    --line:#22383f; --line2:#1a2c33; --accent:#3fa8c4; --accent-ink:#06171d;
+    --accent-soft:#173039; --sand:#d3a06a; --sand-soft:#2b2116;
+    --ok:#5fc99b; --ok-soft:#122c22; --warn:#e0b264; --warn-soft:#2b2314;
+    --stop:#e58585; --stop-soft:#2e1717; --shadow:none;
+    --now:#3fa8c4;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d1719; --card:#14232a; --ink:#eaf3f6; --body:#c1d2d9; --muted:#8ba3ac;
+  --line:#22383f; --line2:#1a2c33; --accent:#3fa8c4; --accent-ink:#06171d;
+  --accent-soft:#173039; --sand:#d3a06a; --sand-soft:#2b2116;
+  --ok:#5fc99b; --ok-soft:#122c22; --warn:#e0b264; --warn-soft:#2b2314;
+  --stop:#e58585; --stop-soft:#2e1717; --shadow:none;
+  --now:#3fa8c4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{background:var(--bg);color:var(--body);font-size:16px;line-height:1.55;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  padding-bottom:calc(56px + env(safe-area-inset-bottom));}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px;}
+h1,h2,h3{color:var(--ink);letter-spacing:-.01em;line-height:1.25;}
+
+header{background:linear-gradient(160deg,#0b4f5c 0%,#0d6577 60%,#0d7490 100%);color:#fff;
+  padding:calc(20px + env(safe-area-inset-top)) 0 20px;}
+header .wrap{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;}
+header h1{color:#fff;font-size:21px;margin-bottom:3px;}
+header .sub{font-size:13.5px;opacity:.9;}
+.tog{flex:0 0 auto;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+  color:#fff;border-radius:999px;width:38px;height:38px;font-size:16px;cursor:pointer;
+  line-height:1;display:grid;place-items:center;}
+.tog:active{transform:scale(.94);}
+
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);
+  padding:9px 0 10px;}
+.seg{display:flex;gap:6px;background:var(--line2);border-radius:10px;padding:4px;}
+.seg button{flex:1;border:0;background:none;color:var(--muted);font:inherit;font-size:14px;
+  font-weight:600;padding:7px 4px;border-radius:7px;cursor:pointer;}
+.seg button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:var(--shadow);}
+.chips{display:flex;gap:7px;overflow-x:auto;margin-top:9px;padding-bottom:2px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.chips::-webkit-scrollbar{display:none;}
+.chips button{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--body);
+  font:inherit;font-size:13.5px;padding:6px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;}
+.chips button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+  color:var(--accent-ink);font-weight:600;}
+
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted);
+  padding:12px 0 2px;}
+.prog{height:5px;border-radius:999px;background:var(--line);overflow:hidden;margin:9px 0 2px;}
+.prog i{display:block;height:100%;background:var(--ok);}
+
+h2.day{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+  margin:22px 0 9px;font-weight:700;}
+.s{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:11px;padding:13px 15px;margin-bottom:9px;box-shadow:var(--shadow);}
+/* The left rule is WHO RUNS IT. Place was the old key and it did not earn the colour: 38 of the
+   sessions are in the meeting room, so most of the week was one shade. Who is running it varies
+   session to session and is the thing a reader actually wants at a glance. */
+.s.o-philip{border-left-color:#2f8f7d;}
+.s.o-aj{border-left-color:var(--sand);}
+.s.o-jett{border-left-color:#5a7fb0;}
+.s.o-team{border-left-color:#9a6a9c;}
+.key{display:flex;flex-wrap:wrap;gap:7px 14px;margin:2px 0 14px;font-size:13px;color:var(--muted);}
+.key span{display:inline-flex;align-items:center;gap:6px;}
+.key i{width:11px;height:11px;border-radius:3px;display:inline-block;}
+.key i.o-philip{background:#2f8f7d;} .key i.o-aj{background:var(--sand);}
+.key i.o-jett{background:#5a7fb0;} .key i.o-team{background:#9a6a9c;}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;border-radius:999px;padding:2px 8px;margin-left:7px;
+  vertical-align:2px;}
+.badge.f-new{background:var(--ok-soft);color:var(--ok);}
+.badge.f-moved{background:var(--accent-soft);color:var(--accent);}
+.badge.f-tbc{background:var(--warn-soft);color:var(--warn);}
+.s .askline{font-size:13.5px;color:var(--warn);background:var(--warn-soft);border-radius:7px;
+  padding:6px 10px;margin-top:8px;}
+.s .t{font-size:12.5px;font-weight:700;color:var(--accent);letter-spacing:.02em;}
+.s .w{font-size:16px;color:var(--ink);font-weight:600;margin:2px 0 5px;}
+.s .l{font-size:13.5px;color:var(--muted);}
+.s .l b{color:var(--body);font-weight:600;}
+.s .note{font-size:13.5px;color:var(--warn);background:var(--warn-soft);border-radius:7px;
+  padding:6px 10px;margin-top:8px;}
+.s.done{opacity:.62;}
+.s.done .w{text-decoration:line-through;text-decoration-thickness:1px;}
+.s.cx .w{text-decoration:line-through;text-decoration-thickness:1px;}
+.s.now{border-left-color:var(--now);box-shadow:0 0 0 2px var(--accent-soft),var(--shadow);}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;border-radius:5px;padding:2px 7px;margin-left:7px;vertical-align:2px;}
+.s-done{background:var(--ok-soft);color:var(--ok);}
+.s-cx{background:var(--stop-soft);color:var(--stop);}
+.s-mv{background:var(--warn-soft);color:var(--warn);}
+.s-now{background:var(--accent-soft);color:var(--accent);}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px;
+  margin-bottom:11px;box-shadow:var(--shadow);}
+.card h3{font-size:17px;}
+.card .rl{display:block;font-size:13px;color:var(--muted);font-weight:400;margin-top:1px;}
+.card .tot{font-size:12.5px;color:var(--accent);font-weight:600;margin-top:5px;}
+.pday{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  font-weight:700;margin:13px 0 5px;padding-top:11px;border-top:1px solid var(--line2);}
+.pr{display:flex;gap:11px;padding:5px 0;font-size:14.5px;}
+.pr .pt{flex:0 0 92px;color:var(--muted);font-variant-numeric:tabular-nums;font-size:13.5px;}
+.pr .px{flex:1;color:var(--ink);}
+.pr .pw{display:block;font-size:12.5px;color:var(--muted);font-weight:400;}
+.pr.done .px{text-decoration:line-through;opacity:.6;}
+
+.note-box{background:var(--accent-soft);border-radius:11px;padding:14px 16px;margin:16px 0;
+  font-size:14.5px;color:var(--ink);}
+.note-box b{color:var(--ink);}
+.empty{text-align:center;color:var(--muted);padding:38px 12px;font-size:14.5px;}
+footer{color:var(--muted);font-size:12.5px;padding:26px 0 30px;border-top:1px solid var(--line);
+  margin-top:28px;}
+footer code{font-size:12px;background:var(--line2);padding:1px 5px;border-radius:4px;}
+@media(min-width:680px){
+  body{font-size:16.5px;} header h1{font-size:26px;} .wrap{padding:0 24px;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:11px;align-items:start;}
+  .cols .card{margin-bottom:0;}
+}
+@media print{
+  .bar,.tog,footer{display:none;} body{background:#fff;padding:0;}
+  .s,.card{break-inside:avoid;box-shadow:none;}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div>
+    <h1>@@CLIENT@@ &mdash; your week with us</h1>
+    <div class="sub">@@RANGE@@ &middot; who we need, when, and where</div>
+  </div>
+  <button class="tog" id="tog" type="button" title="Light or dark" aria-label="Switch light or dark">&#9681;</button>
+</div></header>
+
+<div class="wrap">
+  <div class="bar">
+    <div class="seg" role="tablist">
+      <button role="tab" id="v-day" aria-selected="true">By day</button>
+      <button role="tab" id="v-person" aria-selected="false">By person</button>
+      <button role="tab" id="v-needs" aria-selected="false">What we need</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div id="meta" class="meta"></div>
+  <div class="prog" id="prog"><i style="width:0"></i></div>
+  <main id="out"></main>
+  <footer>
+    <p>This page is kept up to date during the week &mdash; sessions are ticked off as they
+    finish, and anything that moves is changed here first.</p>
+    <p style="margin-top:8px">Schedule as at <b>@@STAMP@@</b> &middot; reference <code>@@REF@@</code>.
+    If you are holding a printed copy with a different reference, this page is the current one.</p>
+    <p style="margin-top:8px" id="src"></p>
+  </footer>
+</div>
+
+<script>
+/* BAKED is the copy built into this file. It is what makes the page work with no signal.
+   schedule.json is the same shape, fetched on load, and WINS when it loads -- so a time or a
+   sentence can be corrected on github.com and is live in under a minute with no rebuild. If
+   the fetch fails, or returns something that is not a schedule, BAKED is what you see. */
+const BAKED = @@WEEK@@;
+const STATES = @@STATES@@;
+const FLAGS = @@FLAGS@@;
+const KEY = @@KEY@@;
+
+let WEEK = BAKED, view = "day", pick = null, STATUS = {}, byId = {};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function reindex(){ byId = Object.fromEntries(WEEK.sessions.map(s => [s.id, s])); }
+reindex();
+
+/* A hand-edited schedule.json is adopted only if it is actually a schedule. The failure that
+   matters is not a syntax error -- that throws and we fall back -- it is a well-formed file
+   with an empty sessions list, which would render a blank week and look deliberate. */
+function usable(j){
+  return !!j && Array.isArray(j.sessions) && j.sessions.length
+      && Array.isArray(j.days) && j.days.length
+      && j.sessions.every(s => s && s.id && s.day && s.start && s.end && s.what);
+}
+
+/* Theme: system by default, and a manual choice sticks. Wrapped because a browser with site
+   data blocked throws on the accessor itself rather than returning null. */
+function theme(set){
+  try{
+    if(set){ localStorage.setItem("casa-theme", set); }
+    const v = localStorage.getItem("casa-theme");
+    if(v){ document.documentElement.setAttribute("data-theme", v); }
+  }catch(e){ if(set){ document.documentElement.setAttribute("data-theme", set); } }
+}
+theme();
+$("#tog").addEventListener("click", () => {
+  const dark = getComputedStyle(document.body).backgroundColor.match(/\d+/g)[0] < 100;
+  theme(dark ? "light" : "dark");
+});
+
+function state(id){
+  const raw = (STATUS[id] || {});
+  const st = STATES[raw.state] ? raw.state : "";
+  return { st: st, label: st ? STATES[st][0] : "", cls: st ? STATES[st][1] : "", note: raw.note || "" };
+}
+
+/* "Now" is the viewer's own clock against the session's day. It is a convenience, never a
+   claim about what has happened -- that is what the ticked state is for. */
+function nowId(){
+  const d = new Date(), iso = d.getFullYear() + "-" +
+    String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  const day = WEEK.days.find(x => x.date === iso);
+  if(!day) return null;
+  const hm = String(d.getHours()).padStart(2,"0") + ":" + String(d.getMinutes()).padStart(2,"0");
+  const s = WEEK.sessions.find(s => s.day === day.key && s.start <= hm && hm < s.end);
+  return s ? s.id : null;
+}
+
+function today(){
+  const d = new Date(), iso = d.getFullYear() + "-" +
+    String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+  const day = WEEK.days.find(x => x.date === iso);
+  return day ? day.key : null;
+}
+
+function sessionCard(s, live){
+  const t = state(s.id);
+  const cls = ["s", s.ocls || "o-team", t.st === "done" ? "done" : "",
+               t.st === "cancelled" ? "cx" : "", s.id === live ? "now" : ""].join(" ").trim();
+  const f = FLAGS[s.flag];
+  const badge = f ? '<span class="badge ' + f[1] + '">' + esc(f[0]) + "</span>" : "";
+  const ask = (f && f[2]) ? '<div class="askline">' + esc(f[2]) + "</div>" : "";
+  const tag = t.label ? '<span class="tag ' + t.cls + '">' + t.label + "</span>"
+            : (s.id === live ? '<span class="tag s-now">On now</span>' : "");
+  const ours = s.ours.length ? ' <span style="opacity:.7">&middot; with ' + esc(s.ours.join(", ")) + "</span>" : "";
+  return '<article class="' + cls + '">'
+    + '<div class="t">' + esc(s.from) + " &ndash; " + esc(s.to) + "</div>"
+    + '<div class="w">' + esc(s.what) + badge + tag + "</div>"
+    + '<div class="l"><b>' + esc(s.where) + "</b> &middot; " + esc(s.casa.join(", ")) + ours + "</div>"
+    + ask
+    + (t.note ? '<div class="note">' + esc(t.note) + "</div>" : "")
+    + "</article>";
+}
+
+function render(){
+  const live = nowId(), out = $("#out");
+  const chips = $("#chips");
+
+  if(view === "needs"){
+    chips.innerHTML = "";
+    out.innerHTML = '<div class="note-box">For every session on this page &mdash; not once for '
+      + "the week, but each time a block runs.</div>"
+      + WEEK.needs.map(n => '<div class="card"><h3>' + esc(n.what)
+        + '</h3><p style="margin-top:6px;font-size:14.5px">' + esc(n.detail) + "</p></div>").join("");
+    $("#meta").innerHTML = ""; $("#prog").style.display = "none";
+    return;
+  }
+  $("#prog").style.display = "";
+
+  if(view === "day"){
+    const days = WEEK.days;
+    if(pick === null || !days.some(d => d.key === pick)) pick = today() || days[0].key;
+    chips.innerHTML = days.map(d => '<button aria-pressed="' + (d.key === pick) + '" data-k="'
+      + d.key + '">' + esc(d.label.split(" ")[0]) + (d.key === today() ? " &middot; today" : "")
+      + "</button>").join("");
+    const day = days.find(d => d.key === pick);
+    const legend = '<div class="key">' + KEY.map(k =>
+      '<span><i class="lk ' + k[1] + '"></i>' + esc(k[0]) + "</span>").join("") + "</div>";
+    const list = WEEK.sessions.filter(s => s.day === pick);
+    const done = list.filter(s => state(s.id).st === "done").length;
+    $("#meta").innerHTML = "<span>" + esc(day.label) + "</span><span>" + list.length
+      + " sessions</span><span>" + done + " done</span>";
+    $("#prog").firstChild.style.width = (list.length ? done / list.length * 100 : 0) + "%";
+    out.innerHTML = list.length
+      ? '<h2 class="day">' + esc(day.label) + "</h2>" + legend
+        + list.map(s => sessionCard(s, live)).join("")
+      : '<div class="empty">Nothing scheduled on this day.</div>';
+    return;
+  }
+
+  const people = WEEK.people;
+  if(pick === null || !people.some(p => p.key === pick)) pick = people[0].key;
+  chips.innerHTML = people.map(p => '<button aria-pressed="' + (p.key === pick) + '" data-k="'
+    + p.key + '">' + esc(p.short) + "</button>").join("");
+  const p = people.find(x => x.key === pick);
+  const list = p.sessions.map(i => byId[i]);
+  const done = list.filter(s => state(s.id).st === "done").length;
+  $("#meta").innerHTML = "<span>" + esc(p.name) + "</span><span>" + list.length
+    + " sessions</span><span>" + done + " done</span>";
+  $("#prog").firstChild.style.width = (list.length ? done / list.length * 100 : 0) + "%";
+
+  let html = '<div class="card"><h3>' + esc(p.name) + '<span class="rl">' + esc(p.role)
+    + "</span></h3>";
+  for(const d of WEEK.days){
+    const mine = list.filter(s => s.day === d.key);
+    if(!mine.length) continue;
+    html += '<div class="pday">' + esc(d.label) + "</div>";
+    html += mine.map(s => {
+      const t = state(s.id);
+      return '<div class="pr' + (t.st === "done" ? " done" : "") + '">'
+        + '<div class="pt">' + esc(s.from) + "</div><div class=\"px\">" + esc(s.what)
+        + (t.label ? ' <span class="tag ' + t.cls + '">' + t.label + "</span>" : "")
+        + '<span class="pw">' + esc(s.where) + "</span></div></div>";
+    }).join("");
+  }
+  out.innerHTML = html + "</div>";
+}
+
+$("#chips").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  pick = b.dataset.k; render();
+});
+for(const [id, v] of [["#v-day","day"],["#v-person","person"],["#v-needs","needs"]]){
+  $(id).addEventListener("click", () => {
+    view = v; pick = null;
+    for(const o of ["#v-day","#v-person","#v-needs"]) $(o).setAttribute("aria-selected", o === id);
+    render();
+  });
+}
+
+/* Two files are fetched, never baked in, so a one-line commit is live without a rebuild:
+   schedule.json (times, wording, who) and status.json (ticks). If either cannot be read the
+   page still draws -- the baked schedule, and nothing ticked, which is the safe way round.
+   The footer says which schedule you are looking at, so "did my edit take?" is answerable
+   from the phone rather than by trusting that it did. */
+function note(txt){ const e = document.getElementById("src"); if(e) e.textContent = txt; }
+
+const getSchedule = fetch("schedule.json?t=" + Date.now(), {cache: "no-store"})
+  .then(r => r.ok ? r.json() : null)
+  .then(j => {
+    if(usable(j)){ WEEK = j; reindex(); note("Showing the live schedule file."); }
+    else { note("Showing the built-in copy — the live schedule file could not be read."); }
+  })
+  .catch(() => note("Showing the built-in copy — no connection to the live schedule file."));
+
+const getStatus = fetch("status.json?t=" + Date.now(), {cache: "no-store"})
+  .then(r => r.ok ? r.json() : null)
+  .then(j => { if(j && j.sessions) STATUS = j.sessions; })
+  .catch(() => {});
+
+Promise.all([getSchedule, getStatus]).then(render);
+render();
+setInterval(render, 60000);
+</script>
+</body>
+</html>

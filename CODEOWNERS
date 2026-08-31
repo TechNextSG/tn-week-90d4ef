@@ -1,0 +1,26 @@
+# Who owns which part of the schedule.
+#
+# Honest about what this does: everyone listed here can push straight to main, so in normal use
+# nothing here is enforced and no review is requested. It earns its place in one case -- if
+# somebody without push access opens a pull request, GitHub asks the right person to look at it
+# instead of defaulting to the repository owner.
+#
+# It is also the shortest answer to "whose is this row?", which is why the same names appear in
+# each track file's own header.
+
+/tracks/accounting.md   @AJ-Technext
+/tracks/pms.md          @phillip-technext
+/tracks/trackc.md       @jett-technext
+/tracks/unified.md      @jett-technext
+/tracks/joint_walk.md   @jett-technext
+
+# Shared reference tables -- changing these affects every track, so they are deliberately not
+# owned by one track's owner.
+/roster.md              @jett-technext
+/week.md                @jett-technext
+
+# The build and its configuration.
+/build.py               @jett-technext
+/page.template.html     @jett-technext
+/baseline-clashes.json  @jett-technext
+/.github/               @jett-technext

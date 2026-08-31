@@ -9,85 +9,100 @@ including every staff name on the page — as readable by anyone who has the lin
 
 ---
 
-## The two files you can edit
+## Changing the schedule
 
-Both are fetched by the page on load, so an edit committed on github.com is live in **about a
-minute** — no rebuild, no Python, no local checkout. They behave **differently** when the page is
-next re-cut from the working tree, and that difference is the thing to remember:
+**The `tracks/` files ARE the schedule.** Edit yours on github.com, commit, and the page rebuilds
+and updates itself in a minute or two. No pull request, nobody to ask, no laptop needed.
 
-| File | What it holds | What a rebuild does to it |
-|---|---|---|
-| `status.json` | ticks — done, cancelled, moved, plus a note | **merges.** Your ticks survive |
-| `schedule.json` | the schedule itself — times, wording, who, where | **overwrites.** Your edits are lost |
+| Your track | File |
+|---|---|
+| Accounting | [`tracks/accounting.md`](tracks/accounting.md) |
+| Property system and till | [`tracks/pms.md`](tracks/pms.md) |
+| Reservations, people, handover | [`tracks/trackc.md`](tracks/trackc.md) |
+| Everyone together | [`tracks/unified.md`](tracks/unified.md) |
+| Joint walks | [`tracks/joint_walk.md`](tracks/joint_walk.md) |
 
-### `status.json` — ticking sessions off
+### On a phone or a laptop, same six steps
 
-Find the session and change one word:
+1. Open your track file (links above).
+2. Tap the **pencil** icon, top right.
+3. Find your row. Each row is one session.
+4. Change what you need — the time, the sentence, who is in it.
+5. Scroll down, write one line saying what you changed, and press **Commit changes**.
+6. Commit to **`main`**. Do not create a branch — there is nothing waiting to approve it.
+
+That's it. Watch for the small **✓** next to your commit after a minute; the page is updated when
+it turns green.
+
+### The one rule
+
+**Never change the `id` column.** Everything else in the row is yours to edit. The ids are how
+the page remembers which sessions have been ticked off, so changing one loses that tick silently —
+no error, the tick just stops showing. If a session genuinely no longer exists, delete the whole
+row; don't renumber it.
+
+### What the columns mean
+
+| Column | What goes in it |
+|---|---|
+| `id` | Leave it alone. |
+| `day` | `mon` `tue` `wed` `thu` `fri` |
+| `start`, `end` | 24-hour clock, `14:30` not `2.30pm`. The page prints the friendly version itself. |
+| `say` | The sentence Casa reads. Write it for them, not for us. |
+| `where` | The room, as Casa would say it. |
+| `casa` | Their people, as short names — see [`roster.md`](roster.md). Separate with commas. |
+| `ours` | Our people, same list, same idea. |
+| `badge` | Leave blank, or `new`, `moved`, `tbc`. `tbc` also prints a line asking them to confirm the time. |
+
+Names go in as the short token from [`roster.md`](roster.md) — `michelle`, not `Michelle`. If the
+token isn't in that file the build stops and tells you, so a typo can't quietly drop someone from
+a session.
+
+### If it goes red instead of green
+
+Nothing broke. **The page carries on showing the previous version** — a bad edit is never
+published. Click the red **✗** next to your commit and it names the file, the row and what's
+wrong. Fix it in another commit and the ✗ becomes a ✓.
+
+Things it will stop you on: a time that isn't `HH:MM`, an end before its start, a day that isn't
+this week, an empty sentence, a name it doesn't recognise, a changed `id` that a tick still points
+at, and a session with nobody from Casa in it.
+
+Things it will only *mention*, never block: two sessions needing the same person at once. It
+reports genuinely new clashes and stays quiet about the ones already known about, because deciding
+who moves is a judgement, not a mistake.
+
+---
+
+## Ticking sessions off
+
+[`status.json`](status.json) holds what's done. Find the session and change one word:
 
 ```json
 "tue-0800-a-tour-of-the-front-desk-scr": {
-  "when": "Tuesday 1 September, 8am",
-  "title": "A tour of the front-desk screens",
-  "state": "done",
-  "note": ""
+  "state": "done"
 }
 ```
 
-- `state` accepts **`done`**, **`cancelled`**, **`moved`**. Leave it `""` for anything that has
-  not happened. Any other value is ignored rather than displayed.
-- `note` is optional and shows as a line under the session — use it for *"moved to 4pm, boat
-  came back late"*.
-- `when` and `title` are there so you can see what you are ticking. Editing them does nothing;
-  the next build overwrites them.
+`done`, `cancelled` or `moved`. Leave it `""` for anything that hasn't happened yet. There's an
+optional `"note"` that prints as a line under the session — useful for *"moved to 3pm"*.
 
-### `schedule.json` — fixing the schedule itself
+This one is fetched straight by the page, so a tick shows within a minute.
 
-This is the schedule the page draws. Change a `from`/`to` to move a session, a `what` to reword
-it, a `where` or the `casa`/`ours` name lists to change who is in the room.
+---
 
-- **Leave `id` alone.** The `status.json` ticks are keyed on it.
-- `start`/`end` are the 24-hour values that drive the ordering and the now-marker. Change them
-  **together with** `from`/`to`, or the page will display one time and sort by another.
-- **A rebuild overwrites this file.** Anything corrected here must also be corrected in
-  `_render/sessions_final.json` (or in the wording map) or it is lost at the next re-cut.
-  `--check` reports the difference by name before that happens — see below.
+## The other files
 
-## How the page decides which schedule to show
+| File | What it is |
+|---|---|
+| [`roster.md`](roster.md) | Who each short name means, and what they're called on the page. Row order is the order people are listed. |
+| [`week.md`](week.md) | The five day headings, and the "what we need from you" cards. |
+| `index.html`, `schedule.json` | **Generated. Don't edit them** — they're rebuilt from `tracks/` on every commit, so an edit here is overwritten. |
+| `build.py` | Builds the page. `python build.py --check` validates without writing anything, if you have a checkout. |
+| `page.template.html` | The page's layout and styling. |
 
-`index.html` carries a **baked copy** of the schedule, so the page draws itself with no network
-call and works on one bar of signal. `schedule.json` is fetched on top of it and **wins when it
-loads**. If it is missing, unreachable or not a usable schedule — unparseable, or an empty session
-list — the page falls back to the baked copy rather than rendering a blank week.
+## Who owns what
 
-**The footer says which copy is on screen**, so "did my edit take?" is answerable from the phone
-instead of assumed. If it still says *"Showing the built-in copy"* after you have committed, the
-edit has not landed — reload, and check the JSON is valid.
-
-## Everything else is generated
-
-**Editing `index.html` in place is pointless** — the next build overwrites it. To change anything
-permanently, change the source in the working tree and re-publish:
-
-```
-python _render/render_pages.py
-```
-
-That command merges `status.json` rather than replacing it: sessions that still exist keep
-whatever you set, sessions that have gone are dropped, and new ones arrive blank. It prints
-exactly what it dropped, so a session disappearing from the week is never silent. It **replaces**
-`schedule.json`.
-
-## Checking it is still current
-
-The footer of the page shows the date it was built and an eight-character reference. To find out
-whether that reference still matches the live schedule, from the working tree:
-
-```
-python _render/render_pages.py --check
-```
-
-It writes nothing and answers **CURRENT** or **STALE**, and separately reports whether the
-published `schedule.json` still matches what a rebuild would write — which is how you find a
-github.com edit *before* a re-cut destroys it. Worth running before sending the link to anyone —
-on 31 August the schedule changed seven times between 01:27 and 07:13, and a page built at the
-start of that would have promised two people a session that no longer existed.
+Ownership is written into each track file's header and into [`CODEOWNERS`](CODEOWNERS). Nothing
+stops you editing someone else's track — if you're covering for them on the day, go ahead. Every
+change records who made it, which is the only audit anyone needs here.

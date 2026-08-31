@@ -1,0 +1,74 @@
+# Checks the schedule and publishes the page.
+#
+# Runs on every push to main. If any check fails NOTHING is deployed, so the page people are
+# looking at stays exactly as it was and the failure shows as a red cross against the commit that
+# caused it. That is what makes it safe to commit straight to main without anyone reviewing it:
+# a typo cannot take the schedule down.
+#
+# The self-test runs BEFORE the build, deliberately. Every check in build.py reports a problem by
+# adding to a list, so a checker that silently stopped working would report an empty list and read
+# as "no problems found". The self-test hands each check input that must break it and fails if the
+# check stays quiet -- so a broken checker fails the run instead of waving a broken schedule
+# through.
+
+name: Publish the week page
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One publish at a time, newest wins. Two people committing within a minute of each other should
+# not race, and the older of the two has nothing worth finishing.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Prove the checks themselves still work
+        run: python build.py --self-test
+
+      - name: Check the schedule
+        run: python build.py --check
+
+      - name: Build the page
+        run: |
+          mkdir -p _out
+          python build.py --outdir _out
+          cp status.json robots.txt _out/
+          touch _out/.nojekyll
+
+      # Nothing below runs on a pull request -- there is nothing to deploy from a branch, and the
+      # checks above are the whole point of running on one.
+      - name: Upload
+        if: github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _out
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

@@ -58,29 +58,6 @@
    "flag": ""
   },
   {
-   "id": "mon-1500-walk-the-property-together-r",
-   "day": "mon",
-   "start": "15:00",
-   "end": "16:30",
-   "from": "3pm",
-   "to": "4.30pm",
-   "mins": 90,
-   "what": "Walk the property together — rooms, rates, the menu and the dive list",
-   "where": "Around the resort",
-   "casa": [
-    "Dong",
-    "Andrew",
-    "Rhiva"
-   ],
-   "ours": [
-    "Philip",
-    "Jett"
-   ],
-   "owner": "More than one of us",
-   "ocls": "o-team",
-   "flag": ""
-  },
-  {
    "id": "mon-1500-a-tour-of-the-accounting-scr",
    "day": "mon",
    "start": "15:00",
@@ -101,6 +78,29 @@
    ],
    "owner": "AJ",
    "ocls": "o-aj",
+   "flag": ""
+  },
+  {
+   "id": "mon-1500-walk-the-property-together-r",
+   "day": "mon",
+   "start": "15:00",
+   "end": "16:30",
+   "from": "3pm",
+   "to": "4.30pm",
+   "mins": 90,
+   "what": "Walk the property together — rooms, rates, the menu and the dive list",
+   "where": "Around the resort",
+   "casa": [
+    "Dong",
+    "Andrew",
+    "Rhiva"
+   ],
+   "ours": [
+    "Philip",
+    "Jett"
+   ],
+   "owner": "More than one of us",
+   "ocls": "o-team",
    "flag": ""
   },
   {
@@ -168,26 +168,6 @@
    "flag": "new"
   },
   {
-   "id": "tue-0800-a-tour-of-the-front-desk-scr",
-   "day": "tue",
-   "start": "08:00",
-   "end": "09:00",
-   "from": "8am",
-   "to": "9am",
-   "mins": 60,
-   "what": "A tour of the front-desk screens",
-   "where": "The meeting room",
-   "casa": [
-    "Rhiva"
-   ],
-   "ours": [
-    "Philip"
-   ],
-   "owner": "Philip",
-   "ocls": "o-philip",
-   "flag": ""
-  },
-  {
    "id": "tue-0800-a-guided-click-through-of-th",
    "day": "tue",
    "start": "08:00",
@@ -206,6 +186,26 @@
    ],
    "owner": "AJ",
    "ocls": "o-aj",
+   "flag": ""
+  },
+  {
+   "id": "tue-0800-a-tour-of-the-front-desk-scr",
+   "day": "tue",
+   "start": "08:00",
+   "end": "09:00",
+   "from": "8am",
+   "to": "9am",
+   "mins": 60,
+   "what": "A tour of the front-desk screens",
+   "where": "The meeting room",
+   "casa": [
+    "Rhiva"
+   ],
+   "ours": [
+    "Philip"
+   ],
+   "owner": "Philip",
+   "ocls": "o-philip",
    "flag": ""
   },
   {
@@ -271,27 +271,6 @@
    "flag": ""
   },
   {
-   "id": "tue-1000-we-walk-your-store-together",
-   "day": "tue",
-   "start": "10:00",
-   "end": "11:00",
-   "from": "10am",
-   "to": "11am",
-   "mins": 60,
-   "what": "We walk your store together, watch how you count it today, and then do a count with you",
-   "where": "Kitchen / restaurant",
-   "casa": [
-    "Michelle",
-    "Beth"
-   ],
-   "ours": [
-    "Jett"
-   ],
-   "owner": "Jett",
-   "ocls": "o-jett",
-   "flag": "new"
-  },
-  {
    "id": "tue-1000-setting-up-foreign-currency",
    "day": "tue",
    "start": "10:00",
@@ -311,6 +290,27 @@
    "owner": "AJ",
    "ocls": "o-aj",
    "flag": ""
+  },
+  {
+   "id": "tue-1000-we-walk-your-store-together",
+   "day": "tue",
+   "start": "10:00",
+   "end": "11:00",
+   "from": "10am",
+   "to": "11am",
+   "mins": 60,
+   "what": "We walk your store together, watch how you count it today, and then do a count with you",
+   "where": "Kitchen / restaurant",
+   "casa": [
+    "Michelle",
+    "Beth"
+   ],
+   "ours": [
+    "Jett"
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": "new"
   },
   {
    "id": "tue-1100-vat-discounts-and-net-rates",
@@ -1032,25 +1032,6 @@
    "flag": ""
   },
   {
-   "id": "fri-1100-re-test-anything-you-raised",
-   "day": "fri",
-   "start": "11:00",
-   "end": "12:00",
-   "from": "11am",
-   "to": "12pm",
-   "mins": 60,
-   "what": "Re-test anything you raised",
-   "where": "The meeting room",
-   "casa": [
-    "Eloisa",
-    "Rhiva"
-   ],
-   "ours": [],
-   "owner": "More than one of us",
-   "ocls": "o-team",
-   "flag": ""
-  },
-  {
    "id": "fri-1100-re-test-anything-that-did-no",
    "day": "fri",
    "start": "11:00",
@@ -1069,6 +1050,25 @@
    ],
    "owner": "AJ",
    "ocls": "o-aj",
+   "flag": ""
+  },
+  {
+   "id": "fri-1100-re-test-anything-you-raised",
+   "day": "fri",
+   "start": "11:00",
+   "end": "12:00",
+   "from": "11am",
+   "to": "12pm",
+   "mins": 60,
+   "what": "Re-test anything you raised",
+   "where": "The meeting room",
+   "casa": [
+    "Eloisa",
+    "Rhiva"
+   ],
+   "ours": [],
+   "owner": "More than one of us",
+   "ocls": "o-team",
    "flag": ""
   },
   {
@@ -1138,6 +1138,27 @@
    "flag": ""
   },
   {
+   "id": "fri-1530-agree-the-go-live-date-and-h",
+   "day": "fri",
+   "start": "15:30",
+   "end": "16:00",
+   "from": "3.30pm",
+   "to": "4pm",
+   "mins": 30,
+   "what": "Agree the go-live date and how we switch over",
+   "where": "The meeting room",
+   "casa": [
+    "Andrew",
+    "Leni"
+   ],
+   "ours": [
+    "AJ"
+   ],
+   "owner": "AJ",
+   "ocls": "o-aj",
+   "flag": ""
+  },
+  {
    "id": "fri-1530-we-read-back-what-passed-are",
    "day": "fri",
    "start": "15:30",
@@ -1159,27 +1180,6 @@
    ],
    "owner": "More than one of us",
    "ocls": "o-team",
-   "flag": ""
-  },
-  {
-   "id": "fri-1530-agree-the-go-live-date-and-h",
-   "day": "fri",
-   "start": "15:30",
-   "end": "16:00",
-   "from": "3.30pm",
-   "to": "4pm",
-   "mins": 30,
-   "what": "Agree the go-live date and how we switch over",
-   "where": "The meeting room",
-   "casa": [
-    "Andrew",
-    "Leni"
-   ],
-   "ours": [
-    "AJ"
-   ],
-   "owner": "AJ",
-   "ocls": "o-aj",
    "flag": ""
   },
   {
@@ -1261,8 +1261,8 @@
     "wed-1300-monthly-reporting-and-the-va",
     "wed-1430-what-to-do-when-something-is",
     "wed-1600-recap-and-your-questions",
-    "fri-1530-we-read-back-what-passed-are",
     "fri-1530-agree-the-go-live-date-and-h",
+    "fri-1530-we-read-back-what-passed-are",
     "fri-1600-walk-the-readiness-checklist",
     "fri-1640-signing"
    ],
@@ -1535,20 +1535,8 @@
   }
  ],
  "_readme": [
-  "This file IS the schedule the page shows. Edit it on github.com, commit, and the page",
-  "picks it up within a minute -- no rebuild. The page footer says which copy you are",
-  "looking at, so you can check the edit took instead of assuming it did.",
-  "",
-  "Safe to change: \"from\"/\"to\" (what is displayed), \"what\" (the sentence), \"where\",",
-  "and the \"casa\"/\"ours\" name lists. Leave \"id\" alone -- status.json ticks are keyed on it.",
-  "\"start\"/\"end\" are 24-hour and drive the day ordering and the now-marker; change them",
-  "together with \"from\"/\"to\" or the page will say one time and sort by another.",
-  "",
-  "If this file is unreadable or has an empty session list the page falls back to the copy",
-  "built into index.html, so a bad edit degrades to yesterday rather than to a blank page.",
-  "",
-  "WARNING, and it is the opposite of status.json: a rebuild OVERWRITES this file. Anything",
-  "changed here is lost the next time the page is re-cut unless the same change is made in",
-  "the source schedule. Tell whoever rebuilds, or make the change in both places."
+  "GENERATED. Do not edit -- edit tracks/*.md instead and this file is rebuilt.",
+  "The page fetches this file and prefers it over the copy baked into index.html, so the",
+  "footer tells you which one you are looking at."
  ]
 }
