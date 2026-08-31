@@ -40,6 +40,12 @@
       "state": "",
       "note": ""
     },
+    "tue-0500-we-watch-you-count-the-bar-b": {
+      "when": "Tuesday 1 September, 5am",
+      "title": "We watch you count the bar before it opens — your own way, nothing to change",
+      "state": "",
+      "note": ""
+    },
     "tue-0800-a-tour-of-the-front-desk-scr": {
       "when": "Tuesday 1 September, 8am",
       "title": "A tour of the front-desk screens",
@@ -136,9 +142,21 @@
       "state": "",
       "note": ""
     },
+    "tue-2000-your-closing-count-against-w": {
+      "when": "Tuesday 1 September, 8pm",
+      "title": "Your closing count, against what the system says was sold that day — the two figures side by side",
+      "state": "",
+      "note": ""
+    },
     "wed-0800-we-watch-how-linen-amenities": {
       "when": "Wednesday 2 September, 8am",
       "title": "We watch how linen, amenities and supplies are counted today — nothing to prepare",
+      "state": "",
+      "note": ""
+    },
+    "wed-0900-where-a-stock-count-gets-ent": {
+      "when": "Wednesday 2 September, 9am",
+      "title": "Where a stock count gets entered, and you enter one yourself — with your own linen and amenities",
       "state": "",
       "note": ""
     },

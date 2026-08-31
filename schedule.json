@@ -148,6 +148,26 @@
    "flag": ""
   },
   {
+   "id": "tue-0500-we-watch-you-count-the-bar-b",
+   "day": "tue",
+   "start": "05:00",
+   "end": "06:00",
+   "from": "5am",
+   "to": "6am",
+   "mins": 60,
+   "what": "We watch you count the bar before it opens — your own way, nothing to change",
+   "where": "The bar",
+   "casa": [
+    "Whoever opens the bar"
+   ],
+   "ours": [
+    "Jett"
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": "new"
+  },
+  {
    "id": "tue-0800-a-tour-of-the-front-desk-scr",
    "day": "tue",
    "start": "08:00",
@@ -488,6 +508,26 @@
    "flag": ""
   },
   {
+   "id": "tue-2000-your-closing-count-against-w",
+   "day": "tue",
+   "start": "20:00",
+   "end": "21:30",
+   "from": "8pm",
+   "to": "9.30pm",
+   "mins": 90,
+   "what": "Your closing count, against what the system says was sold that day — the two figures side by side",
+   "where": "The bar",
+   "casa": [
+    "Whoever opens the bar"
+   ],
+   "ours": [
+    "Jett"
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": "new"
+  },
+  {
    "id": "wed-0800-we-watch-how-linen-amenities",
    "day": "wed",
    "start": "08:00",
@@ -506,6 +546,26 @@
    "owner": "Jett",
    "ocls": "o-jett",
    "flag": "tbc"
+  },
+  {
+   "id": "wed-0900-where-a-stock-count-gets-ent",
+   "day": "wed",
+   "start": "09:00",
+   "end": "09:50",
+   "from": "9am",
+   "to": "9.50am",
+   "mins": 50,
+   "what": "Where a stock count gets entered, and you enter one yourself — with your own linen and amenities",
+   "where": "The meeting room",
+   "casa": [
+    "Eloisa"
+   ],
+   "ours": [
+    "Jett"
+   ],
+   "owner": "Jett",
+   "ocls": "o-jett",
+   "flag": "new"
   },
   {
    "id": "wed-0900-bank-reconciliation",
@@ -1223,6 +1283,7 @@
     "tue-1530-dives-with-nobody-assigned-t",
     "tue-1715-agree-how-the-office-and-the",
     "wed-0800-we-watch-how-linen-amenities",
+    "wed-0900-where-a-stock-count-gets-ent",
     "wed-1035-training-adding-your-own-pro",
     "wed-1530-closing-the-till-then-checki",
     "wed-1630-splitting-one-bill-between-t",
@@ -1235,7 +1296,7 @@
     "fri-1100-re-test-anything-you-raised",
     "fri-1300-training-getting-enquiries-i"
    ],
-   "mins": 1840
+   "mins": 1890
   },
   {
    "key": "rhiva",
@@ -1398,6 +1459,17 @@
     "fri-1300-training-getting-enquiries-i"
    ],
    "mins": 725
+  },
+  {
+   "key": "bar_opener",
+   "name": "Whoever opens the bar",
+   "role": "the person who does the actual count",
+   "short": "Whoever opens the bar",
+   "sessions": [
+    "tue-0500-we-watch-you-count-the-bar-b",
+    "tue-2000-your-closing-count-against-w"
+   ],
+   "mins": 150
   },
   {
    "key": "wider_team",
