@@ -17,6 +17,7 @@ Row order is the order people appear on the page. `called` is what the page prin
 | cecille | Cecille S. Ramos | Accounting Officer | Cecille |
 | avelina | Avelina B. Cuson | Finance Manager — known as Leni | Leni |
 | hr_head | HR Head | - | HR Head |
+| allen | Allen G. GeClaro | HR Manager | Allen |
 | jomel | Jomel C. Cruzat | Divemaster | Jomel |
 | loren | Loren C. Alulod | Rescue Diver | Loren |
 | michelle | Michelle C. Bantugon | Kitchen Manager | Michelle |

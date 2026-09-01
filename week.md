@@ -24,4 +24,5 @@ One card each on the page, in this order.
 | One screen | A TV or a projector in that room. A blank wall works if the projector reaches it. |
 | A device each | One laptop or tablet per person named in the block. Sharing a screen is fine for a walkthrough and not fine for the sessions where your staff work on their own — those are most of Thursday. |
 | Logins, before Monday | Everyone on this page able to sign in, from the resort's own network and devices. |
-| Your count days, as soon as you can | Housekeeping and the dive shop each count their own stock on their own schedule. Tell us which day and roughly what time each of them counts this week, and we will sit in on one rather than ask anyone to do it twice. The dining and bar count daily, so that one we can simply join. |
+| The dive shop's count day | The dive shop counts its own gear on its own schedule. Tell us which day and roughly what time, and we will sit in on one rather than ask anyone to count twice. The dining and bar count daily, so that one we simply join. |
+| Anything your current till can export | For Wednesday afternoon: whatever your present till can produce — a sales report, a product list, a printout, a file, a photograph of a screen. Whatever exists is useful; nothing needs preparing specially. |

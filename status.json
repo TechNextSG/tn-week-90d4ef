@@ -115,19 +115,19 @@
     "tue-1430-handling-deposits-practice": {
       "when": "Tuesday 1 September, 2.30pm",
       "title": "Handling deposits — practice",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "tue-1530-dives-with-nobody-assigned-t": {
       "when": "Tuesday 1 September, 3.30pm",
       "title": "Dives with nobody assigned — the warning, and testing that it works",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "tue-1600-recap-your-questions-and-who": {
       "when": "Tuesday 1 September, 4pm",
       "title": "Recap, your questions, and who tests what on Thursday",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "tue-1715-agree-how-the-office-and-the": {
@@ -139,13 +139,7 @@
     "tue-2000-your-closing-count-against-w": {
       "when": "Tuesday 1 September, 8pm",
       "title": "Your closing count, against what the system says was sold that day — the two figures side by side",
-      "state": "",
-      "note": ""
-    },
-    "wed-0800-we-watch-how-linen-amenities": {
-      "when": "Wednesday 2 September, 8am",
-      "title": "We watch how linen, amenities and supplies are counted today — nothing to prepare",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-0900-where-a-stock-count-gets-ent": {
