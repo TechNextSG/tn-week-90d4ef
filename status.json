@@ -145,31 +145,31 @@
     "wed-0900-where-a-stock-count-gets-ent": {
       "when": "Wednesday 2 September, 9am",
       "title": "Where a stock count gets entered, and you enter one yourself — with your own linen and amenities",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-0900-bank-reconciliation": {
       "when": "Wednesday 2 September, 9am",
       "title": "Bank reconciliation",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-0900-ring-real-restaurant-and-bar": {
       "when": "Wednesday 2 September, 9am",
       "title": "Ring real restaurant and bar orders to a room",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-1030-petty-cash-and-agent-booking": {
       "when": "Wednesday 2 September, 10.30am",
       "title": "Petty cash and agent bookings",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-1035-training-adding-your-own-pro": {
       "when": "Wednesday 2 September, 10.35am",
-      "title": "Training: adding your own products and contacts, so your lists stay yours",
-      "state": "",
+      "title": "Training: your contacts — adding them, keeping them clean, and finding anything again",
+      "state": "done",
       "note": ""
     },
     "wed-1300-gear-rental-and-dive-package": {
