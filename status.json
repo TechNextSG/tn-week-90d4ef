@@ -205,8 +205,8 @@
     "wed-1530-closing-the-till-then-checki": {
       "when": "Wednesday 2 September, 3.30pm",
       "title": "Closing the till, then checking a guest out on one bill",
-      "state": "",
-      "note": ""
+      "state": "cancelled",
+      "note": "Not going ahead as a bill-splitting session -- this slot is now a walkthrough of the recent major changes to the property system, the dive side and the kitchen."
     },
     "wed-1600-recap-and-your-questions": {
       "when": "Wednesday 2 September, 4pm",
