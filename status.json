@@ -175,13 +175,13 @@
     "wed-1300-gear-rental-and-dive-package": {
       "when": "Wednesday 2 September, 1pm",
       "title": "Gear rental and dive packages charged to a room",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-1300-monthly-reporting-and-the-va": {
       "when": "Wednesday 2 September, 1pm",
       "title": "Monthly reporting and the VAT return",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-1300-we-watch-the-till-through-a": {
@@ -193,13 +193,13 @@
     "wed-1400-counting-the-dives-used-and": {
       "when": "Wednesday 2 September, 2pm",
       "title": "Counting the dives used, and the end-of-day check",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-1430-what-to-do-when-something-is": {
       "when": "Wednesday 2 September, 2.30pm",
       "title": "What to do when something is entered wrongly",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-1530-closing-the-till-then-checki": {
@@ -208,10 +208,16 @@
       "state": "cancelled",
       "note": "Not going ahead as a bill-splitting session -- this slot is now a walkthrough of the recent major changes to the property system, the dive side and the kitchen."
     },
+    "wed-1530-what-your-current-till-can-g": {
+      "when": "Wednesday 2 September, 3.30pm",
+      "title": "What your current till can give us — what it holds, and how we get it out",
+      "state": "done",
+      "note": ""
+    },
     "wed-1600-recap-and-your-questions": {
       "when": "Wednesday 2 September, 4pm",
       "title": "Recap and your questions",
-      "state": "",
+      "state": "done",
       "note": ""
     },
     "wed-1630-splitting-one-bill-between-t": {
@@ -227,14 +233,8 @@
       "note": ""
     },
     "thu-0800-you-test-the-system-yourself": {
-      "when": "Thursday 3 September, 8am",
+      "when": "Thursday 3 September, 10am",
       "title": "You test the system yourself — part one. We watch and say nothing",
-      "state": "",
-      "note": ""
-    },
-    "thu-0900-you-run-it-yourself-the-week": {
-      "when": "Thursday 3 September, 9am",
-      "title": "You run it yourself — the weekly stock count, and approving a price change. We watch and say nothing",
       "state": "",
       "note": ""
     },
